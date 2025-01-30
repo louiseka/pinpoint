@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Noto Sans", serif;
+  color: #303030;
+  background-color: #FAF9F6;
+
+}

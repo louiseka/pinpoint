@@ -5,6 +5,15 @@ export default function Goal() {
         console.log("Btn clicked")
     }
 
+
+    const todaysDate = new Date()
+    const year = todaysDate.getFullYear()
+    const month = String(todaysDate.getMonth() + 1).padStart(2, "0")
+    const day = String(todaysDate.getDate()).padStart(2, "0")
+
+    console.log(`${year}-${month}-${day}`)
+
+
     return (
         <form className="goal-form">
             <label htmlFor="goal-name">Goal Name:</label>
@@ -29,7 +38,7 @@ export default function Goal() {
             <input type="text" name="goal-reward" id="goal-reward" />
 
             <label htmlFor="deadline">When do you want to achieve this goal by?</label>
-            <input type="date" name="deadline" id="deadline" min="2025-02-03" max="2025-12-31" />
+            <input type="date" name="deadline" id="deadline" min={`${year}-${month}-${day}`} max="2025-12-31" />
 
             <input type="submit" onClick={handleCreateGoal} value="Create your goal" />
 

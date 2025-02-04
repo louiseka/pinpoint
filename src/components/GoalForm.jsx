@@ -38,13 +38,13 @@ export default function GoalForm({ addGoal }) {
 
             <fieldset>
                 <legend>What level is your goal?</legend>
-                <input type="radio" id="goalLevel1" name="goalLevel" value="easy" checked={goalData.goalLevel === "easy"} onChange={handleChange} />
+                <input type="radio" id="goalLevel1" name="goalLevel" value="Easy" checked={goalData.goalLevel === "Easy"} onChange={handleChange} />
                 <label htmlFor="goalLevel1">Easy</label>
-                <input type="radio" id="goalLevel2" name="goalLevel" value="moderate" checked={goalData.goalLevel === "moderate"} onChange={handleChange} />
+                <input type="radio" id="goalLevel2" name="goalLevel" value="Moderate" checked={goalData.goalLevel === "Moderate"} onChange={handleChange} />
                 <label htmlFor="goalLevel2">Moderate</label>
-                <input type="radio" id="goalLevel3" name="goalLevel" value="hard" checked={goalData.goalLevel === "hard"} onChange={handleChange} />
+                <input type="radio" id="goalLevel3" name="goalLevel" value="Hard" checked={goalData.goalLevel === "Hard"} onChange={handleChange} />
                 <label htmlFor="goalLevel3">Hard</label>
-                <input type="radio" id="goalLevel4" name="goalLevel" value="stretch" checked={goalData.goalLevel === "stretch"} onChange={handleChange} />
+                <input type="radio" id="goalLevel4" name="goalLevel" value="Stretch" checked={goalData.goalLevel === "Stretch"} onChange={handleChange} />
                 <label htmlFor="goalLevel4">Stretch</label>
             </fieldset>
 

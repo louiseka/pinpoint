@@ -16,9 +16,26 @@ body {
   font-size: 1rem;
 }
 
+h1,
+h2,
+h3,
+h3,
+p {
+  margin: 0;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.small-bold-text {
+  font-weight: 500;
+}
+
 /* Goal Form */
 
-.goal-form {
+.goal-form,
+.saved-goal-external {
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -62,8 +79,63 @@ fieldset input[type="radio"]+label {
 .goal-form input[type="submit"] {
   background-color: #747474;
   color: #2a2a2a;
-  max-width: 50%;
+  max-width: 40%;
   margin: 30px 0 20px;
   padding: 0.8em 0;
   cursor: pointer;
+}
+
+/* Saved Goal */
+
+.saved-goal-external {
+  margin: 20px;
+}
+
+.saved-goal-internal {
+  background-color: #FAF9F6;
+  border-radius: 5px;
+  padding: 1.25em;
+}
+
+.goal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.goal-details {
+  margin: 2.25em 0 1.25em;
+}
+
+.goal-footer {
+  margin: 2.25em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goal-details p {
+  margin: 0.2em 0 1.25em;
+}
+
+.goal-label {
+  background-color: #D9D9D9;
+  width: 150px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.goal-complete-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #747474;
+  width: 40%;
+  cursor: pointer;
+  padding: 0.8em 0;
+  margin: 30px 0 20px;
+  font-size: 1rem;
+  color: #303030;
+  font-family: "Noto Sans", serif;
 }

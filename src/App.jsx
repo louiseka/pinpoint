@@ -6,6 +6,7 @@ import { useState } from "react"
 
 function App() {
 
+  const [isGoalCreated, setIsGoalCreated] = useState(false)
   const [goals, setGoals] = useState([])
 
 
@@ -14,6 +15,7 @@ function App() {
     setGoals((prevGoals) => {
       return [...prevGoals, goalData]
     })
+    setIsGoalCreated(true)
   }
 
 
@@ -21,7 +23,7 @@ function App() {
     <>
       <h1>Pinpoint</h1>
       <AddGoal />
-      <GoalForm saveGoal={saveGoal} />
+      {!isGoalCreated && <GoalForm saveGoal={saveGoal} />}
 
       {goals.length > 0 && <SavedGoal goalData={goals[0]} />}
 

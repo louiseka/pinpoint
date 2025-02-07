@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-
 export default function GoalForm({ saveGoal }) {
 
     const [goalData, setGoalData] = useState({
@@ -20,10 +19,6 @@ export default function GoalForm({ saveGoal }) {
         })
     }
 
-    function handleCreateGoal(e) {
-        e.preventDefault()
-        saveGoal(goalData)
-    }
 
     const todaysDate = new Date()
     const year = todaysDate.getFullYear()
@@ -56,7 +51,7 @@ export default function GoalForm({ saveGoal }) {
             <label htmlFor="deadline">When do you want to achieve this goal by?</label>
             <input type="date" name="goalDeadline" id="deadline" min={`${year}-${month}-${day}`} max="2025-12-31" value={goalData.goalDeadline} onChange={handleChange} />
 
-            <input type="submit" onClick={handleCreateGoal} value="Create your goal" />
+            <input type="submit" onClick={(e) => saveGoal(goalData, e)} value="Create your goal" />
 
         </form>
     )

@@ -9,7 +9,8 @@ function App() {
   const [goals, setGoals] = useState([])
 
 
-  function saveGoal(goalData) {
+  function saveGoal(goalData, e) {
+    e.preventDefault()
     setGoals((prevGoals) => {
       return [...prevGoals, goalData]
     })

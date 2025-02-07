@@ -1,12 +1,5 @@
-import { useEffect } from "react"
-
 export default function SavedGoal({ goalData }) {
 
-    useEffect(() => {
-        console.log(goalData)
-    })
-
-    console.log('render')
     return (
         <div className="saved-goal-external">
             <div className="saved-goal-internal">

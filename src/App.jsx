@@ -1,5 +1,6 @@
 import GoalForm from "./components/GoalForm"
 import SavedGoal from "./components/SavedGoal"
+import AddGoal from "./components/AddGoal"
 
 import { useState } from "react"
 
@@ -8,7 +9,7 @@ function App() {
   const [goals, setGoals] = useState([])
 
 
-  function addGoal(goalData) {
+  function saveGoal(goalData) {
     setGoals((prevGoals) => {
       return [...prevGoals, goalData]
     })
@@ -18,7 +19,8 @@ function App() {
   return (
     <>
       <h1>Pinpoint</h1>
-      <GoalForm addGoal={addGoal} />
+      <AddGoal />
+      <GoalForm saveGoal={saveGoal} />
 
       {goals.length > 0 && <SavedGoal goalData={goals[0]} />}
 

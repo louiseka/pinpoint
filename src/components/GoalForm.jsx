@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export default function GoalForm({ addGoal }) {
+export default function GoalForm({ saveGoal }) {
 
     const [goalData, setGoalData] = useState({
         goalName: "",
@@ -22,8 +22,7 @@ export default function GoalForm({ addGoal }) {
 
     function handleCreateGoal(e) {
         e.preventDefault()
-        console.log("Btn clicked")
-        addGoal(goalData)
+        saveGoal(goalData)
     }
 
     const todaysDate = new Date()
@@ -34,7 +33,7 @@ export default function GoalForm({ addGoal }) {
     return (
         <form className="goal-form">
             <label htmlFor="goal-name">Goal Name:</label>
-            <input type="text" name="goalName" id="goal-name" value={goalData.goalName} onChange={handleChange} />
+            <input required type="text" name="goalName" id="goal-name" value={goalData.goalName} onChange={handleChange} />
 
             <fieldset>
                 <legend>What level is your goal?</legend>

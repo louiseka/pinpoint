@@ -1,7 +1,7 @@
-export default function AddGoal() {
+export default function AddGoal({ renderGoalForm }) {
     return (
-        <div>
-            <button> Get started and create your first goal</button>
+        <div className="add-goal-block">
+            <button onClick={() => renderGoalForm()}> Get started and create your first goal</button>
         </div>
     )
 }

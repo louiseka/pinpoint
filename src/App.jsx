@@ -6,24 +6,28 @@ import { useState } from "react"
 
 function App() {
 
-  const [isGoalCreated, setIsGoalCreated] = useState(false)
+  const [showGoalForm, setShowGoalForm] = useState(false)
   const [goals, setGoals] = useState([])
 
+
+  function renderGoalForm() {
+    setShowGoalForm(true)
+  }
 
   function saveGoal(goalData, e) {
     e.preventDefault()
     setGoals((prevGoals) => {
       return [...prevGoals, goalData]
     })
-    setIsGoalCreated(true)
+    setShowGoalForm(false)
   }
 
 
   return (
     <>
       <h1>Pinpoint</h1>
-      <AddGoal />
-      {!isGoalCreated && <GoalForm saveGoal={saveGoal} />}
+      {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} />}
+      {showGoalForm && <GoalForm saveGoal={saveGoal} />}
 
       {goals.length > 0 && <SavedGoal goalData={goals[0]} />}
 

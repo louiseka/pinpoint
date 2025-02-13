@@ -32,6 +32,19 @@ h3 {
   font-weight: 500;
 }
 
+/* CSS Grid */
+.wrapper {
+  max-width: 100%;
+  margin: 3.125em auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 2em 1.5em;
+  border-radius: 5px;
+}
+
+
 /* Goal Form */
 
 .goal-form,
@@ -83,6 +96,20 @@ fieldset input[type="radio"]+label {
   margin: 30px 0 20px;
   padding: 0.8em 0;
   cursor: pointer;
+}
+
+/* Add Goal */
+
+.add-goal-btn {
+  cursor: pointer;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  border: none;
+  font-family: "Noto Sans", serif;
+  font-size: 1.25rem;
 }
 
 /* Saved Goal */

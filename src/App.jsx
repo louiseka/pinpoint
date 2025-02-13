@@ -26,11 +26,13 @@ function App() {
   return (
     <>
       <h1>Pinpoint</h1>
-      {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
-      {showGoalForm && <GoalForm saveGoal={saveGoal} />}
+      <div className="wrapper">
+        {goals.length > 0 && <SavedGoal goalData={goals[0]} />}
+        {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
+        {showGoalForm && <GoalForm saveGoal={saveGoal} />}
 
-      {goals.length > 0 && <SavedGoal goalData={goals[0]} />}
 
+      </div>
     </>
   )
 }

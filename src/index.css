@@ -60,7 +60,8 @@ h3 {
 
 /* Form inputs */
 
-.goal-form input {
+.goal-form input,
+.to-do-form input {
   padding: 0.6em;
   border-radius: 5px;
   border: none;
@@ -74,7 +75,8 @@ fieldset input[type="radio"]+label {
 
 /* Form labels and legends */
 .goal-form label,
-.goal-form legend {
+.goal-form legend,
+.to-do-form label {
   padding: 0.95em 0 0.65em;
 }
 
@@ -114,6 +116,37 @@ fieldset input[type="radio"]+label {
 
 /* Saved Goal */
 
+.to-do-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.to-do-form input {
+  width: 100%;
+}
+
+.to-do-form label {
+  font-weight: 700;
+}
+
+.to-do-input {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.add-btn {
+  border: none;
+  font-size: 1rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0.2em;
+  cursor: pointer;
+}
+
+
 .saved-goal-external {
   margin: 20px;
 }
@@ -136,7 +169,6 @@ fieldset input[type="radio"]+label {
 }
 
 .goal-footer {
-  margin: 2.25em 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -16,10 +16,24 @@ function App() {
 
   function saveGoal(goalData, e) {
     e.preventDefault()
+    goalData.toDoList = []
     setGoals((prevGoals) => {
       return [...prevGoals, goalData]
     })
     setShowGoalForm(false)
+  }
+
+  function saveToDoItem(toDoData, id, e) {
+    e.preventDefault()
+    setGoals((prevGoals) => {
+      return prevGoals.map((goal, index) => {
+        if (index === id) {
+          goal.toDoList = [...goal.toDoList, toDoData]
+        }
+        return goal
+      })
+    })
+    console.log("To do item added")
   }
 
 
@@ -27,7 +41,7 @@ function App() {
     <>
       <h1>Pinpoint</h1>
       <div className="wrapper">
-        {goals.length > 0 && <SavedGoal goalData={goals[0]} />}
+        {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} />}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}
 

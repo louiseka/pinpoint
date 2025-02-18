@@ -1,4 +1,19 @@
-export default function SavedGoal({ goalData }) {
+import { useState } from "react"
+
+export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
+
+    const [toDoData, setToDoData] = useState({
+        toDoItem: ""
+    })
+
+    function handleChange(e) {
+        setToDoData(prevToDoData => {
+            return {
+                ...prevToDoData,
+                [e.target.name]: e.target.value
+            }
+        })
+    }
 
     return (
         <div className="saved-goal-external">
@@ -13,9 +28,17 @@ export default function SavedGoal({ goalData }) {
                     <h3>Reward for doing it</h3>
                     <p>{goalData.goalReward} </p>
                 </div>
-                <div>
-                    <h3>What I need to do:</h3>
-
+                <div className="to-do-form">
+                    <form onSubmit={(e) => saveToDoItem(toDoData, goalId, e)}>
+                        <label htmlFor="to-do">What I need to do:</label>
+                        <div className="to-do-input">
+                            <input type="text" name="toDoItem" id="to-do" value={toDoData.toDoItem} onChange={handleChange} placeholder="Add an item to your to-do list"></input>
+                            <button type="submit" className="add-btn">+</button>
+                        </div>
+                    </form>
+                    <ul>
+                        {goalData.toDoList.map(({ toDoItem }, index) => <li key={index}>{toDoItem}</li>)}
+                    </ul>
                 </div>
                 <div className="goal-footer">
                     <p> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>

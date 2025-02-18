@@ -26,8 +26,8 @@ export default function GoalForm({ saveGoal }) {
     const day = String(todaysDate.getDate()).padStart(2, "0")
 
     return (
-        <form className="goal-form">
-            <label htmlFor="goal-name">Goal Name:</label>
+        <form className="goal-form" onSubmit={(e) => saveGoal(goalData, e)}>
+            <label htmlFor="goal-name">Goal Name: *</label>
             <input required type="text" name="goalName" id="goal-name" value={goalData.goalName} onChange={handleChange} />
 
             <fieldset>
@@ -42,16 +42,16 @@ export default function GoalForm({ saveGoal }) {
                 <label htmlFor="goalLevel4">Stretch</label>
             </fieldset>
 
-            <label htmlFor="goal-reason">Why do you want to achieve this goal?</label>
-            <input type="text" name="goalReason" id="goal-reason" value={goalData.goalReason} onChange={handleChange} />
+            <label htmlFor="goal-reason">Why do you want to achieve this goal? *</label>
+            <input required type="text" name="goalReason" id="goal-reason" value={goalData.goalReason} onChange={handleChange} />
 
-            <label htmlFor="goal-reward">What will you reward yourself with?</label>
-            <input type="text" name="goalReward" id="goal-reward" value={goalData.goalReward} onChange={handleChange} />
+            <label htmlFor="goal-reward">What will you reward yourself with? *</label>
+            <input required type="text" name="goalReward" id="goal-reward" value={goalData.goalReward} onChange={handleChange} />
 
             <label htmlFor="deadline">When do you want to achieve this goal by?</label>
             <input type="date" name="goalDeadline" id="deadline" min={`${year}-${month}-${day}`} max="2025-12-31" value={goalData.goalDeadline} onChange={handleChange} />
 
-            <input type="submit" onClick={(e) => saveGoal(goalData, e)} value="Create your goal" />
+            <input type="submit" value="Create your goal" />
 
         </form>
     )

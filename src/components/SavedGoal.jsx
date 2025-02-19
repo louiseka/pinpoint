@@ -15,6 +15,19 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
         })
     }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        if (toDoData.toDoItem === "") {
+            return
+        }
+        saveToDoItem(toDoData, goalId)
+        setToDoData(() => {
+            return {
+                toDoItem: ""
+            }
+        })
+    }
+
     return (
         <div className="saved-goal-external">
             <div className="saved-goal-internal">
@@ -29,7 +42,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
                     <p>{goalData.goalReward} </p>
                 </div>
                 <div className="to-do-form">
-                    <form onSubmit={(e) => saveToDoItem(toDoData, goalId, e)}>
+                    <form onSubmit={(e) => handleSubmit(e)}>
                         <label htmlFor="to-do">What I need to do:</label>
                         <div className="to-do-input">
                             <input type="text" name="toDoItem" id="to-do" value={toDoData.toDoItem} onChange={handleChange} placeholder="Add an item to your to-do list"></input>

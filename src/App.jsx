@@ -23,8 +23,7 @@ function App() {
     setShowGoalForm(false)
   }
 
-  function saveToDoItem(toDoData, id, e) {
-    e.preventDefault()
+  function saveToDoItem(toDoData, id) {
     setGoals((prevGoals) => {
       return prevGoals.map((goal, index) => {
         if (index === id) {
@@ -33,7 +32,6 @@ function App() {
         return goal
       })
     })
-    console.log("To do item added")
   }
 
 

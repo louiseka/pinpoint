@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { FaPlus, FaCheck, FaTimes } from "react-icons/fa"
 
 export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
 
@@ -46,11 +47,11 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
                         <label htmlFor="to-do">What I need to do:</label>
                         <div className="to-do-input">
                             <input type="text" name="toDoItem" id="to-do" value={toDoData.toDoItem} onChange={handleChange} placeholder="Add an item to your to-do list"></input>
-                            <button type="submit" className="add-btn">+</button>
+                            <button type="submit" className="add-btn"><FaPlus /></button>
                         </div>
                     </form>
                     <ul>
-                        {goalData.toDoList.map(({ toDoItem }, index) => <li key={index}>{toDoItem}</li>)}
+                        {goalData.toDoList.map(({ toDoItem }, index) => <li key={index}>{toDoItem}<FaCheck /> <FaTimes /></li>)}
                     </ul>
                 </div>
                 <div className="goal-footer">

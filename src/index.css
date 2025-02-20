@@ -136,9 +136,35 @@ fieldset input[type="radio"]+label {
   display: flex;
 }
 
+.to-do-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.action-btns {
+  font-size: 0.8rem;
+  display: flex;
+  gap: 0.8em;
+  margin: 0 1em;
+
+}
+
+.delete-btn {
+  color: red;
+}
+
+.done-btn {
+  color: green;
+}
+
+
+
 .add-btn {
   border: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-radius: 50%;
   width: 40px;
   height: 40px;

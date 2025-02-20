@@ -1,0 +1,110 @@
+/* Saved Goal */
+
+.to-do-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.to-do-form input {
+    width: 100%;
+}
+
+.to-do-form label {
+    font-weight: 700;
+}
+
+.to-do-input {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.to-do-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.action-btns {
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.8em;
+    margin: 0 1em;
+
+}
+
+.delete-btn {
+    color: red;
+}
+
+.done-btn {
+    color: green;
+}
+
+
+
+.add-btn {
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0.2em;
+    cursor: pointer;
+}
+
+
+.saved-goal-external {
+    margin: 20px;
+}
+
+.saved-goal-internal {
+    background-color: #FAF9F6;
+    border-radius: 5px;
+    padding: 1.25em;
+}
+
+.goal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.goal-details {
+    margin: 2.25em 0 1.25em;
+}
+
+.goal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.goal-details p {
+    margin: 0.2em 0 1.25em;
+}
+
+.goal-label {
+    background-color: #D9D9D9;
+    width: 150px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.goal-complete-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #747474;
+    width: 40%;
+    cursor: pointer;
+    padding: 0.8em 0;
+    margin: 30px 0 20px;
+    font-size: 1rem;
+    color: #303030;
+    font-family: "Noto Sans", serif;
+}

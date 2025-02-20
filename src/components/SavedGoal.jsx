@@ -1,3 +1,4 @@
+import "/src/styles/saved-goal.css"
 import { useState } from "react"
 import { FaPlus, FaCheck, FaTimes } from "react-icons/fa"
 

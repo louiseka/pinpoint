@@ -1,3 +1,5 @@
+import "/src/styles/add-goal.css"
+
 export default function AddGoal({ renderGoalForm, goalData }) {
 
 

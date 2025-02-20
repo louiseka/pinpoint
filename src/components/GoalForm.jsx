@@ -1,3 +1,4 @@
+import "/src/styles/goal-form.css"
 import { useState } from "react"
 
 export default function GoalForm({ saveGoal }) {

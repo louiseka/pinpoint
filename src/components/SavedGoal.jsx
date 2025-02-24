@@ -52,7 +52,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
                         </div>
                     </form>
                     <ul>
-                        {goalData.toDoList.map(({ toDoItem }, index) => <li key={index}> <div className="to-do-actions"> {toDoItem} <span className="action-btns"><FaCheck className="done-btn" /> <FaTimes className="delete-btn" /></span></div></li>)}
+                        {goalData.toDoList.map(({ toDoItem }, index) => <li key={index}> <div className="to-do-actions"> {toDoItem} <span className="action-btns"><button className="done-btn"><FaCheck /> </button><FaTimes className="delete-btn" /></span></div></li>)}
                     </ul>
                 </div>
                 <div className="goal-footer">

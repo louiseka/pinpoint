@@ -14,11 +14,11 @@ function App() {
     setShowGoalForm(true)
   }
 
-  function saveGoal(goalData, e) {
+  function saveGoal(formData, e) {
     e.preventDefault()
-    goalData.toDoList = []
+    formData.toDoList = []
     setGoals((prevGoals) => {
-      return [...prevGoals, goalData]
+      return [...prevGoals, formData]
     })
     setShowGoalForm(false)
   }

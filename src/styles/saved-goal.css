@@ -35,7 +35,6 @@
 }
 
 
-
 .action-btns {
     font-size: 0.8rem;
     display: flex;
@@ -54,10 +53,14 @@
 
 .delete-btn {
     color: red;
+
 }
 
 .done-btn {
     color: green;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 

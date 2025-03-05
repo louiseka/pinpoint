@@ -34,12 +34,23 @@ function App() {
     })
   }
 
+  function completeToDoItem(goalId, toDoIndex, complete) {
+    setGoals((prevGoals) => {
+      return prevGoals.map((goal, index) => {
+        if (index === goalId) {
+          goal.toDoList[toDoIndex] = { ...goal.toDoList[toDoIndex], complete: complete }
+        }
+        return goal
+      })
+    })
+  }
+
 
   return (
     <>
       <h1>Pinpoint</h1>
       <div className="wrapper">
-        {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} />}
+        {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} />}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}
 

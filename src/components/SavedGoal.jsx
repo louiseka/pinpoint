@@ -2,10 +2,11 @@ import "/src/styles/saved-goal.css"
 import { useState } from "react"
 import { FaPlus, FaCheck, FaTimes } from "react-icons/fa"
 
-export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
+export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem }) {
 
     const [toDoData, setToDoData] = useState({
-        toDoItem: ""
+        toDoItem: "",
+        complete: false
     })
 
     function handleChange(e) {
@@ -25,9 +26,17 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
         saveToDoItem(toDoData, goalId)
         setToDoData(() => {
             return {
-                toDoItem: ""
+                toDoItem: "",
+                complete: false
             }
         })
+    }
+
+    function toDoItemDone(index, complete) {
+        completeToDoItem(goalId, index, !complete)
+        console.log(index, "item complete")
+        // document.querySelector(".to-do-item").style.textDecoration = "line-through"
+
     }
 
     return (
@@ -52,7 +61,17 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem }) {
                         </div>
                     </form>
                     <ul>
-                        {goalData.toDoList.map(({ toDoItem }, index) => <li key={index}> <div className="to-do-actions"> {toDoItem} <span className="action-btns"><FaCheck className="done-btn" /> <FaTimes className="delete-btn" /></span></div></li>)}
+                        {goalData.toDoList.map(({ toDoItem, complete }, index) => (
+                            <li className={complete ? 'to-do-item-done' : 'to-do-item'} key={index}>
+                                <div className="to-do-actions">
+                                    {toDoItem}
+                                    <span className="action-btns">
+                                        <button className="done-btn" onClick={() => toDoItemDone(index, complete)}><FaCheck /> </button>
+                                        <button className="delete-btn"><FaTimes /></button>
+                                    </span>
+                                </div>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="goal-footer">

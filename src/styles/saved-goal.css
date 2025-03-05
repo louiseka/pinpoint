@@ -20,6 +20,14 @@
     display: flex;
 }
 
+.to-do-item {
+    text-decoration: none;
+}
+
+.to-do-item-done {
+    text-decoration: line-through;
+}
+
 .to-do-actions {
     display: flex;
     align-items: center;
@@ -31,9 +39,17 @@
 .action-btns {
     font-size: 0.8rem;
     display: flex;
+    align-items: center;
     gap: 0.8em;
     margin: 0 1em;
 
+}
+
+.delete-btn,
+.done-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 .delete-btn {
@@ -43,7 +59,6 @@
 .done-btn {
     color: green;
 }
-
 
 
 .add-btn {

@@ -1,6 +1,6 @@
 import "/src/styles/saved-goal.css"
 import { useState } from "react"
-import { FaPlus, FaCheck, FaTimes } from "react-icons/fa"
+import { FaPlus, FaTimes } from "react-icons/fa"
 
 export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem }) {
 
@@ -64,9 +64,10 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                         {goalData.toDoList.map(({ toDoItem, complete }, index) => (
                             <li className={complete ? 'to-do-item-done' : 'to-do-item'} key={index}>
                                 <div className="to-do-actions">
-                                    {toDoItem}
+                                    <label htmlFor={toDoItem}> {toDoItem} </label>
                                     <span className="action-btns">
-                                        <button className="done-btn" onClick={() => toDoItemDone(index, complete)}><FaCheck /> </button>
+                                        <input type="checkbox" id={toDoItem} value={toDoItem} onClick={() => toDoItemDone(index, complete)}></input>
+
                                         <button className="delete-btn"><FaTimes /></button>
                                     </span>
                                 </div>

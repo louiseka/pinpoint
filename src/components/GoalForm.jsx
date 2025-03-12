@@ -28,7 +28,7 @@ export default function GoalForm({ saveGoal }) {
 
     return (
         <form className="goal-form" onSubmit={(e) => saveGoal(formData, e)}>
-            <label htmlFor="goal-name">Goal Name: *</label>
+            <label htmlFor="goal-name">Goal Name: <span className="small-text">(Required)</span></label>
             <input required type="text" name="goalName" id="goal-name" value={formData.goalName} onChange={handleChange} />
 
             <fieldset>
@@ -43,10 +43,10 @@ export default function GoalForm({ saveGoal }) {
                 <label htmlFor="goalLevel4">Stretch</label>
             </fieldset>
 
-            <label htmlFor="goal-reason">Why do you want to achieve this goal? *</label>
+            <label htmlFor="goal-reason">Why do you want to achieve this goal? <span className="small-text">(Required)</span></label>
             <input required type="text" name="goalReason" id="goal-reason" value={formData.goalReason} onChange={handleChange} />
 
-            <label htmlFor="goal-reward">What will you reward yourself with? *</label>
+            <label htmlFor="goal-reward">What will you reward yourself with? <span className="small-text">(Required)</span></label>
             <input required type="text" name="goalReward" id="goal-reward" value={formData.goalReward} onChange={handleChange} />
 
             <label htmlFor="deadline">When do you want to achieve this goal by?</label>

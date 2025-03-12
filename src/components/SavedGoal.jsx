@@ -2,7 +2,7 @@ import "/src/styles/saved-goal.css"
 import { useState } from "react"
 import { FaPlus, FaTimes } from "react-icons/fa"
 
-export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem }) {
+export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem, deleteToDoItem }) {
 
     const [toDoData, setToDoData] = useState({
         toDoItem: "",
@@ -34,9 +34,6 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
 
     function toDoItemDone(index, complete) {
         completeToDoItem(goalId, index, !complete)
-        console.log(index, "item complete")
-        // document.querySelector(".to-do-item").style.textDecoration = "line-through"
-
     }
 
     return (
@@ -68,7 +65,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                                     <span className="action-btns">
                                         <input type="checkbox" id={toDoItem} value={toDoItem} onClick={() => toDoItemDone(index, complete)}></input>
 
-                                        <button className="delete-btn"><FaTimes /></button>
+                                        <button className="delete-btn" onClick={() => deleteToDoItem(goalId, index)} ><FaTimes /></button>
                                     </span>
                                 </div>
                             </li>

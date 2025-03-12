@@ -45,12 +45,24 @@ function App() {
     })
   }
 
+  function deleteToDoItem(goalId, toDoIndex) {
+    setGoals((prevGoals) => {
+      return prevGoals.map((goal, index) => {
+        if (index === goalId) {
+          goal.toDoList = goal.toDoList.toSpliced(toDoIndex, 1)
+        }
+        return goal
+      })
+    })
+    console.log("Item deleted")
+  }
+
 
   return (
     <>
       <h1>Pinpoint</h1>
       <div className="wrapper">
-        {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} />}
+        {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}
 

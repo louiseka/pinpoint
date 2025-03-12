@@ -1,5 +1,11 @@
 /* Saved Goal */
 
+/* To do form */
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
 .to-do-form {
     display: flex;
     flex-direction: column;
@@ -44,25 +50,12 @@
 
 }
 
-.delete-btn,
-.done-btn {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-
 .delete-btn {
-    color: red;
-
-}
-
-.done-btn {
-    color: green;
     cursor: pointer;
     border: none;
     background-color: transparent;
+    color: red;
 }
-
 
 .add-btn {
     border: none;

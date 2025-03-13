@@ -73,7 +73,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                     </ul>
                 </div>
                 <div className="goal-footer">
-                    <p> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>
+                    {goalData.goalDeadline && <p> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>}
                     <button className="goal-complete-btn">Mark goal as achieved</button>
                 </div>
             </div>

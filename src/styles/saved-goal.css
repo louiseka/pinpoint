@@ -15,8 +15,9 @@ input[type="checkbox"] {
     width: 100%;
 }
 
-.to-do-form label {
+.to-do-label {
     font-weight: 700;
+    padding: 0.5em 0;
 }
 
 .to-do-input {
@@ -24,10 +25,12 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: space-between;
     display: flex;
+    margin: 0.5em 0 0.2em;
 }
 
 .to-do-item {
     text-decoration: none;
+    margin: 0.2em 0;
 }
 
 .to-do-item-done {
@@ -42,11 +45,10 @@ input[type="checkbox"] {
 
 
 .action-btns {
-    font-size: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 0.8em;
-    margin: 0 1em;
+    gap: 0.5em;
+    margin: 0 0.8em;
 
 }
 
@@ -55,6 +57,8 @@ input[type="checkbox"] {
     border: none;
     background-color: transparent;
     color: red;
+    font-size: 1.3rem;
+    display: flex;
 }
 
 .add-btn {

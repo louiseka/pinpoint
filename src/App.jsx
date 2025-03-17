@@ -3,6 +3,7 @@ import SavedGoal from "./components/SavedGoal"
 import AddGoal from "./components/AddGoal"
 
 import { useState } from "react"
+import { nanoid } from "nanoid"
 
 function App() {
 
@@ -24,20 +25,23 @@ function App() {
   }
 
   function saveToDoItem(toDoData, id) {
+    const toDo = { ...toDoData, id: nanoid() }
     setGoals((prevGoals) => {
       return prevGoals.map((goal, index) => {
         if (index === id) {
-          goal.toDoList = [...goal.toDoList, toDoData]
+          goal.toDoList = [...goal.toDoList, toDo]
         }
         return goal
       })
     })
   }
 
-  function completeToDoItem(goalId, toDoIndex, complete) {
+  function completeToDoItem(goalId, toDoId, complete) {
+
     setGoals((prevGoals) => {
       return prevGoals.map((goal, index) => {
         if (index === goalId) {
+          const toDoIndex = goal.toDoList.findIndex((toDo) => toDo.id === toDoId)
           goal.toDoList[toDoIndex] = { ...goal.toDoList[toDoIndex], complete: complete }
         }
         return goal
@@ -45,16 +49,21 @@ function App() {
     })
   }
 
-  function deleteToDoItem(goalId, toDoIndex) {
+  function deleteToDoItem(goalId, toDoId) {
+    console.log(toDoId)
     setGoals((prevGoals) => {
       return prevGoals.map((goal, index) => {
+        console.log(goalId, index)
         if (index === goalId) {
-          goal.toDoList = goal.toDoList.toSpliced(toDoIndex, 1)
+          const toDoIndex = goal.toDoList.findIndex((toDo) => toDo.id === toDoId)
+          return {
+            ...goal,
+            toDoList: goal.toDoList.toSpliced(toDoIndex, 1)
+          }
         }
         return goal
       })
     })
-    console.log("Item deleted")
   }
 
 

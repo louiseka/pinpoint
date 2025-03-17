@@ -2,6 +2,8 @@ import "/src/styles/saved-goal.css"
 import { useState } from "react"
 import { FaPlus, FaTimes } from "react-icons/fa"
 
+
+
 export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem, deleteToDoItem }) {
 
     const [toDoData, setToDoData] = useState({
@@ -51,21 +53,21 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                 </div>
                 <div className="to-do-form">
                     <form onSubmit={(e) => handleSubmit(e)}>
-                        <label htmlFor="to-do">What I need to do:</label>
+                        <label className="to-do-label" htmlFor="to-do">What I need to do:</label>
                         <div className="to-do-input">
                             <input type="text" name="toDoItem" id="to-do" value={toDoData.toDoItem} onChange={handleChange} placeholder="Add an item to your to-do list"></input>
                             <button type="submit" className="add-btn"><FaPlus /></button>
                         </div>
                     </form>
                     <ul>
-                        {goalData.toDoList.map(({ toDoItem, complete }, index) => (
-                            <li className={complete ? 'to-do-item-done' : 'to-do-item'} key={index}>
+                        {goalData.toDoList.map(({ toDoItem, complete, id }) => (
+                            <li className={complete ? 'to-do-item-done' : 'to-do-item'} key={id}>
                                 <div className="to-do-actions">
                                     <label htmlFor={toDoItem}> {toDoItem} </label>
                                     <span className="action-btns">
-                                        <input type="checkbox" id={toDoItem} value={toDoItem} onClick={() => toDoItemDone(index, complete)}></input>
+                                        <input type="checkbox" id={toDoItem} value={toDoItem} onClick={() => toDoItemDone(id, complete)}></input>
 
-                                        <button className="delete-btn" onClick={() => deleteToDoItem(goalId, index)} ><FaTimes /></button>
+                                        <button className="delete-btn" onClick={() => deleteToDoItem(goalId, id)} ><FaTimes /></button>
                                     </span>
                                 </div>
                             </li>

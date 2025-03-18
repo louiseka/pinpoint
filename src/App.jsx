@@ -18,10 +18,23 @@ function App() {
   function saveGoal(formData, e) {
     e.preventDefault()
     formData.toDoList = []
+    const goal = { ...formData, id: nanoid() }
     setGoals((prevGoals) => {
-      return [...prevGoals, formData]
+      return [...prevGoals, goal]
     })
     setShowGoalForm(false)
+  }
+
+  function deleteGoal(goalId) {
+
+    setGoals((prevGoals) => {
+      return prevGoals.filter((goal) => goal.id !== goalId)
+    })
+    //map over goals array
+    //remove selected goal
+    //setGoals with prevGoals 
+    //
+    console.log("goal deleted")
   }
 
   function saveToDoItem(toDoData, id) {
@@ -37,7 +50,6 @@ function App() {
   }
 
   function completeToDoItem(goalId, toDoId, complete) {
-
     setGoals((prevGoals) => {
       return prevGoals.map((goal, index) => {
         if (index === goalId) {
@@ -50,10 +62,8 @@ function App() {
   }
 
   function deleteToDoItem(goalId, toDoId) {
-    console.log(toDoId)
     setGoals((prevGoals) => {
       return prevGoals.map((goal, index) => {
-        console.log(goalId, index)
         if (index === goalId) {
           const toDoIndex = goal.toDoList.findIndex((toDo) => toDo.id === toDoId)
           return {
@@ -72,7 +82,7 @@ function App() {
       <h1>Pinpoint</h1>
       <div className="wrapper">
         {/* {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />} */}
-        {goals.map((goal, index) => <SavedGoal goalData={goal} goalId={index} key={index} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
+        {goals.map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}
 

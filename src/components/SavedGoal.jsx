@@ -4,7 +4,7 @@ import { FaPlus, FaTimes } from "react-icons/fa"
 
 
 
-export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem, deleteToDoItem }) {
+export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem, deleteToDoItem, deleteGoal }) {
 
     const [toDoData, setToDoData] = useState({
         toDoItem: "",
@@ -77,6 +77,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                 <div className="goal-footer">
                     {goalData.goalDeadline && <p> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>}
                     <button className="goal-complete-btn">Mark goal as achieved</button>
+                    <button className="delete-goal-btn" onClick={() => deleteGoal(goalId)}>Delete goal</button>
                 </div>
             </div>
         </div>

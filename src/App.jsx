@@ -14,6 +14,7 @@ function App() {
   })
 
   useEffect(() => {
+    console.log(goals)
     window.localStorage.setItem("persisted-goals", JSON.stringify(goals))
   }, [goals])
 
@@ -41,9 +42,13 @@ function App() {
   function saveToDoItem(toDoData, id) {
     const toDo = { ...toDoData, id: nanoid() }
     setGoals((prevGoals) => {
-      return prevGoals.map((goal, index) => {
-        if (index === id) {
-          goal.toDoList = [...goal.toDoList, toDo]
+      return prevGoals.map((goal) => {
+        if (goal.id === id) {
+          // goal.toDoList = [...goal.toDoList, toDo]
+          return {
+            ...goal,
+            toDoList: [...goal.toDoList, toDo]
+          }
         }
         return goal
       })
@@ -52,8 +57,8 @@ function App() {
 
   function completeToDoItem(goalId, toDoId, complete) {
     setGoals((prevGoals) => {
-      return prevGoals.map((goal, index) => {
-        if (index === goalId) {
+      return prevGoals.map((goal) => {
+        if (goal.id === goalId) {
           const toDoIndex = goal.toDoList.findIndex((toDo) => toDo.id === toDoId)
           goal.toDoList[toDoIndex] = { ...goal.toDoList[toDoIndex], complete: complete }
         }
@@ -64,8 +69,8 @@ function App() {
 
   function deleteToDoItem(goalId, toDoId) {
     setGoals((prevGoals) => {
-      return prevGoals.map((goal, index) => {
-        if (index === goalId) {
+      return prevGoals.map((goal) => {
+        if (goal.id === goalId) {
           const toDoIndex = goal.toDoList.findIndex((toDo) => toDo.id === toDoId)
           return {
             ...goal,

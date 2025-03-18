@@ -14,7 +14,6 @@ function App() {
   })
 
   useEffect(() => {
-    console.log(goals)
     window.localStorage.setItem("persisted-goals", JSON.stringify(goals))
   }, [goals])
 
@@ -44,7 +43,6 @@ function App() {
     setGoals((prevGoals) => {
       return prevGoals.map((goal) => {
         if (goal.id === id) {
-          // goal.toDoList = [...goal.toDoList, toDo]
           return {
             ...goal,
             toDoList: [...goal.toDoList, toDo]
@@ -87,7 +85,6 @@ function App() {
     <>
       <h1>Pinpoint</h1>
       <div className="wrapper">
-        {/* {goals.length > 0 && <SavedGoal goalData={goals[0]} goalId={0} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />} */}
         {goals.map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}

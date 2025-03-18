@@ -2,14 +2,20 @@ import GoalForm from "./components/GoalForm"
 import SavedGoal from "./components/SavedGoal"
 import AddGoal from "./components/AddGoal"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
 
 function App() {
 
   const [showGoalForm, setShowGoalForm] = useState(false)
-  const [goals, setGoals] = useState([])
+  const [goals, setGoals] = useState(() => {
+    const persistedGoals = window.localStorage.getItem("persisted-goals")
+    return persistedGoals !== null ? JSON.parse(persistedGoals) : []
+  })
 
+  useEffect(() => {
+    window.localStorage.setItem("persisted-goals", JSON.stringify(goals))
+  }, [goals])
 
   function renderGoalForm() {
     setShowGoalForm(true)
@@ -30,11 +36,6 @@ function App() {
     setGoals((prevGoals) => {
       return prevGoals.filter((goal) => goal.id !== goalId)
     })
-    //map over goals array
-    //remove selected goal
-    //setGoals with prevGoals 
-    //
-    console.log("goal deleted")
   }
 
   function saveToDoItem(toDoData, id) {

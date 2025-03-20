@@ -1,13 +1,19 @@
 import GoalForm from "./components/GoalForm"
 import SavedGoal from "./components/SavedGoal"
 import AddGoal from "./components/AddGoal"
+import CompletedGoal from "./components/CompletedGoal"
 
 import { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
+import { useWindowSize } from "react-use"
+import Confetti from "react-confetti"
 
 function App() {
 
+  const { width, height } = useWindowSize()
+
   const [showGoalForm, setShowGoalForm] = useState(false)
+  const [goalComplete, setGoalComplete] = useState(false)
   const [goals, setGoals] = useState(() => {
     const persistedGoals = window.localStorage.getItem("persisted-goals")
     return persistedGoals !== null ? JSON.parse(persistedGoals) : []
@@ -24,11 +30,28 @@ function App() {
   function saveGoal(formData, e) {
     e.preventDefault()
     formData.toDoList = []
-    const goal = { ...formData, id: nanoid() }
+    const goal = { ...formData, id: nanoid(), complete: false }
     setGoals((prevGoals) => {
       return [...prevGoals, goal]
     })
     setShowGoalForm(false)
+  }
+
+  function completeGoal(goalId) {
+    setGoalComplete(true)
+
+    setGoals((prevGoals) => {
+      return prevGoals.map((goal) => {
+        if (goal.id === goalId) {
+          return { ...goal, complete: true }
+        }
+        return goal
+      })
+    })
+
+    console.log(goalId)
+
+    console.log("Goal marked as complete")
   }
 
   function deleteGoal(goalId) {
@@ -85,12 +108,17 @@ function App() {
     <>
       <h1>Pinpoint</h1>
       <div className="wrapper">
-        {goals.map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
+        {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}
-
-
+        {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
       </div>
+      <h2>Completed Goals</h2>
+      <div className="wrapper">
+
+        {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}
+      </div>
+
     </>
   )
 }

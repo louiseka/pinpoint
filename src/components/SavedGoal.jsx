@@ -11,6 +11,10 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
         complete: false
     })
 
+    const value = 100 * (goalData.toDoList.filter((toDo) => toDo.complete).length / goalData.toDoList.length)
+    console.log(value)
+
+
     function handleChange(e) {
         setToDoData(prevToDoData => {
             return {
@@ -73,6 +77,9 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                             </li>
                         ))}
                     </ul>
+                    <label htmlFor="goal-progress" className="small-bold-text">Goal progress: <span className="small-text"> You're {Math.round(value)}% the way there! </span></label>
+
+                    <progress id="goal-progress" value={value} max={100}>{value}</progress>
                 </div>
                 <div className="goal-footer">
                     {goalData.goalDeadline && <p> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>}

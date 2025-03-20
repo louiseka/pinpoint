@@ -128,3 +128,29 @@ input[type="checkbox"] {
     color: #303030;
     font-family: "Noto Sans", serif;
 }
+
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #eee;
+    margin: 0 0.5em;
+    /* Background color */
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    /* Background bar */
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: pink;
+    /* Filled progress */
+    border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #4caf50;
+    /* Firefox */
+}

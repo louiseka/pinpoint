@@ -29,11 +29,15 @@ h3 {
 }
 
 .small-bold-text {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0 0.5em 0.5em;
+
 }
 
 .small-text {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .wrapper {

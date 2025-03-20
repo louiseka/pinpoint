@@ -39,7 +39,6 @@ function App() {
 
   function completeGoal(goalId) {
     setGoalComplete(true)
-
     setGoals((prevGoals) => {
       return prevGoals.map((goal) => {
         if (goal.id === goalId) {
@@ -51,7 +50,6 @@ function App() {
   }
 
   function deleteGoal(goalId) {
-
     setGoals((prevGoals) => {
       return prevGoals.filter((goal) => goal.id !== goalId)
     })

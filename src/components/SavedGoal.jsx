@@ -69,7 +69,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                                 <div className="to-do-actions">
                                     <label htmlFor={toDoItem}> {toDoItem} </label>
                                     <span className="action-btns">
-                                        <input type="checkbox" id={toDoItem} value={toDoItem} onClick={() => toDoItemDone(id, complete)}></input>
+                                        <input type="checkbox" id={toDoItem} checked={complete} onChange={() => toDoItemDone(id, complete)}></input>
 
                                         <button className="delete-btn" onClick={() => deleteToDoItem(goalId, id)} ><FaTimes /></button>
                                     </span>

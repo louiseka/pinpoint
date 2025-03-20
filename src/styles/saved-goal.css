@@ -35,6 +35,7 @@ input[type="checkbox"] {
 
 .to-do-item-done {
     text-decoration: line-through;
+    margin: 0.2em 0;
 }
 
 .to-do-actions {

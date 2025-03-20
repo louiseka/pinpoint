@@ -1,9 +1,6 @@
 export default function CompletedGoals({ goal }) {
 
 
-
-
-
     return (
         <div className="saved-goal-external">
             <div className="saved-goal-internal">
@@ -23,4 +20,3 @@ export default function CompletedGoals({ goal }) {
         </div>
     )
 }
-//map over completedgoals array

@@ -48,10 +48,6 @@ function App() {
         return goal
       })
     })
-
-    console.log(goalId)
-
-    console.log("Goal marked as complete")
   }
 
   function deleteGoal(goalId) {
@@ -107,18 +103,17 @@ function App() {
   return (
     <>
       <h1>Pinpoint</h1>
-      <div className="wrapper">
+      <section className="wrapper">
         {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
         {showGoalForm && <GoalForm saveGoal={saveGoal} />}
         {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
-      </div>
+      </section>
       <h2>Completed Goals</h2>
-      <div className="wrapper">
+      <section className="wrapper">
 
         {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}
-      </div>
-
+      </section>
     </>
   )
 }

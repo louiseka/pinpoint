@@ -1,3 +1,4 @@
+import Header from "./components/Header"
 import GoalForm from "./components/GoalForm"
 import SavedGoal from "./components/SavedGoal"
 import AddGoal from "./components/AddGoal"
@@ -100,7 +101,7 @@ function App() {
 
   return (
     <>
-      <h1>Pinpoint</h1>
+      <Header />
       <section className="wrapper">
         {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
         {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}

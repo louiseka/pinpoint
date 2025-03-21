@@ -11,8 +11,10 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
         complete: false
     })
 
-    const value = 100 * (goalData.toDoList.filter((toDo) => toDo.complete).length / goalData.toDoList.length)
+    const value = 100 * (goalData.toDoList.filter((toDo) => toDo.complete).length / goalData.toDoList.length) || 0
     console.log(value)
+
+
 
 
     function handleChange(e) {
@@ -77,7 +79,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                             </li>
                         ))}
                     </ul>
-                    <label htmlFor="goal-progress" className="small-bold-text">Goal progress: <span className="small-text"> You're {Math.round(value)}% the way there! </span></label>
+                    <label htmlFor="goal-progress" className="small-bold-text">Goal progress: <span className="small-text">{goalData.toDoList.length > 0 ? `You're ${Math.round(value)}% the way there!` : "Get started and add to your to do list"}</span></label>
 
                     <progress id="goal-progress" value={value} max={100}>{value}</progress>
                 </div>

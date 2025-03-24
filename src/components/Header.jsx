@@ -5,7 +5,7 @@ export default function Header() {
         <header>
             <div>
                 <h1>Pinpoint</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt metus vel est</p>
+                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt metus vel est</p>
             </div>
             <p className="countdown"><span className="medium-bold-text">235 days</span> until 31 December 2025</p>
         </header>

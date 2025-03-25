@@ -4,11 +4,11 @@
 .saved-goal-external {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 90%;
     padding: 1.25em;
     background-color: #D9D9D9;
     border-radius: 5px;
-    margin: 20px;
+    margin: 20px auto;
 }
 
 .goal-form-internal {
@@ -59,4 +59,13 @@ fieldset input[type="radio"]+label {
     margin: 30px 0 20px;
     padding: 0.8em 0;
     cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+
+    .goal-form-external,
+    .saved-goal-external {
+        margin: 20px;
+        width: 600px
+    }
 }

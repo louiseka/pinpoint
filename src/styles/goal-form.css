@@ -65,7 +65,16 @@ fieldset input[type="radio"]+label {
 
     .goal-form-external,
     .saved-goal-external {
-        margin: 20px;
+
         width: 600px
+    }
+}
+
+@media (min-width:1024px) and (max-width:1253px) {
+
+    .goal-form-external,
+    .saved-goal-external {
+
+        width: 500px
     }
 }

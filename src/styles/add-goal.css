@@ -3,7 +3,7 @@
 .add-goal-btn {
 
     cursor: pointer;
-    width: 100%;
+    width: 31%;
     font-size: 1rem;
     background-color: #D9D9D9;
     border-radius: 5px;
@@ -16,16 +16,14 @@
 
 @media(min-width:700px) and (max-width: 1023px) {
     .add-goal-btn {
-        height: 600px;
-        width: 600px;
+
         font-size: 1.25rem;
     }
 }
 
 @media (min-width: 1024px) {
     .add-goal-btn {
-        height: 600px;
-        width: 600px;
+
         margin: 1.25em;
         font-size: 1.25rem;
         padding: 0;

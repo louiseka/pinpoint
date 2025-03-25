@@ -79,9 +79,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-.saved-goal-external {
-    margin: 20px;
-}
+
 
 .saved-goal-internal {
     background-color: #FAF9F6;

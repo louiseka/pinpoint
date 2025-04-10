@@ -102,23 +102,26 @@ function App() {
 
   return (
     <>
-      <section className="side-nav">
-        {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
-        <SideNav />
-      </section>
       <Header />
+      <main>
+        <section className="side-nav">
+          {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
+          <SideNav />
+        </section>
 
-      <section className="wrapper">
-        {showGoalForm && <GoalForm saveGoal={saveGoal} />}
-        {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
-        {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
-      </section>
 
-      <h2 className="secondary-header">Completed Goals</h2>
-      <section className="wrapper">
+        <section className="wrapper">
+          {showGoalForm && <GoalForm saveGoal={saveGoal} />}
+          {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
+          {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
+        </section>
 
-        {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}
-      </section>
+        <h2 className="secondary-header">Completed Goals</h2>
+        <section className="wrapper">
+
+          {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}
+        </section>
+      </main>
     </>
   )
 }

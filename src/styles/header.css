@@ -2,6 +2,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 2em 2em 1.2em;
+    margin: 0 0 0 280px;
 }
 
 .description {
@@ -15,6 +16,7 @@ header {
 
 .secondary-header {
     padding: 2em 1.3em 1.2em;
+    margin: 0 0 0 280px;
 
 }
 

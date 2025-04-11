@@ -37,6 +37,29 @@
 
 }
 
+/* Buttons */
+
+.create-goal-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #747474;
+    width: 40%;
+    cursor: pointer;
+    padding: 0.8em 0;
+    margin: 30px 0 20px;
+    font-size: 1rem;
+    color: #303030;
+    font-family: "Noto Sans", serif;
+}
+
+.close-goal-btn {
+    color: red;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* Form inputs */
 
 .goal-form input,

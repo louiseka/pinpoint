@@ -29,6 +29,10 @@ function App() {
     setShowGoalForm(true)
   }
 
+  function closeGoalForm() {
+    setShowGoalForm(false)
+  }
+
   function saveGoal(formData, e) {
     e.preventDefault()
     formData.toDoList = []
@@ -111,7 +115,7 @@ function App() {
 
 
         <section className="wrapper">
-          {showGoalForm && <GoalForm saveGoal={saveGoal} />}
+          {showGoalForm && <GoalForm saveGoal={saveGoal} closeGoalForm={closeGoalForm} />}
           {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
           {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
         </section>

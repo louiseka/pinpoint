@@ -1,7 +1,7 @@
 import "/src/styles/goal-form.css"
 import { useState } from "react"
 
-export default function GoalForm({ saveGoal }) {
+export default function GoalForm({ saveGoal, closeGoalForm }) {
 
     const [formData, setFormData] = useState({
         goalName: "",
@@ -54,7 +54,10 @@ export default function GoalForm({ saveGoal }) {
                 <label htmlFor="deadline">When do you want to achieve this goal by?</label>
                 <input type="date" name="goalDeadline" id="deadline" min={`${year}-${month}-${day}`} max="2025-12-31" value={formData.goalDeadline} onChange={handleChange} />
 
-                <input type="submit" value="Create your goal" />
+                <div className="goal-footer">
+                    <input className="create-goal-btn" type="submit" value="Create your goal" />
+                    <button className="close-goal-btn" onClick={() => closeGoalForm()} >Close goal form</button>
+                </div>
             </div>
         </form>
 

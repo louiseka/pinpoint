@@ -5,10 +5,12 @@ import AddGoal from "./components/AddGoal"
 import CompletedGoal from "./components/CompletedGoal"
 import SideNav from "./components/SideNav"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { nanoid } from "nanoid"
 import { useWindowSize } from "react-use"
 import Confetti from "react-confetti"
+
+
 
 function App() {
 
@@ -20,6 +22,18 @@ function App() {
     const persistedGoals = window.localStorage.getItem("persisted-goals")
     return persistedGoals !== null ? JSON.parse(persistedGoals) : []
   })
+
+  const [filterParams, setFilterParams] = useState(null)
+
+  const filteredGoals = useMemo(
+    () => {
+      if (!filterParams) {
+        return goals
+      }
+      return goals.filter(goal => goal.goalLevel === filterParams)
+    },
+    [goals, filterParams]
+  )
 
   useEffect(() => {
     window.localStorage.setItem("persisted-goals", JSON.stringify(goals))
@@ -110,13 +124,16 @@ function App() {
       <main>
         <section className="side-nav">
           {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
-          <SideNav />
+          <SideNav filterParams={filterParams} setFilterParams={setFilterParams} />
         </section>
 
 
         <section className="wrapper">
           {showGoalForm && <GoalForm saveGoal={saveGoal} closeGoalForm={closeGoalForm} />}
-          {goals.filter((goal) => !goal.complete).map((goal) => <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
+          {filteredGoals.length === 0 ?
+            <p>No goals found for this filter.</p>
+            : filteredGoals.filter((goal) => !goal.complete).map((goal) =>
+              <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
           {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
         </section>
 

@@ -1,18 +1,36 @@
+
+
 import "/src/styles/side-nav.css"
 
-export default function SideNav() {
+export default function SideNav({ filterParams, setFilterParams }) {
+
+    // if filterParams is already 'Moderate', set it to null instead
+    // function updateFilter(level) level === filterParams
+
+    function updateFilter(level) {
+        if (level === filterParams) {
+            setFilterParams(null)
+        } else {
+            setFilterParams(level)
+        }
+    }
+
+
     return (
         <>
             <div className="side-nav-actions">
                 <div className="filter-nav">
                     <h2>Filter by goal level</h2>
                     <div className="goal-levels-filter-btns">
-                        <button className="goal-level-btn">Easy</button>
-                        <button className="goal-level-btn">Moderate</button>
-                        <button className="goal-level-btn">Hard</button>
-                        <button className="goal-level-btn">Stretch</button>
+                        <button className={filterParams === "Easy" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Easy")}>Easy</button>
+                        <button className={filterParams === "Moderate" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Moderate")}>Moderate</button>
+                        <button className={filterParams === "Hard" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Hard")}>Hard</button>
+                        <button className={filterParams === "Stretch" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Stretch")}>Stretch</button>
+                        {filterParams && <button className="goal-level-btn" onClick={() => updateFilter()} >Clear filter</button>}
                     </div>
                 </div>
+
+
 
                 <div className="theme-nav">
                     <h2>Choose your theme</h2>

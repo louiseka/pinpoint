@@ -27,6 +27,7 @@ export default function GoalForm({ saveGoal }) {
     const day = String(todaysDate.getDate()).padStart(2, "0")
 
     return (
+
         <form className="goal-form-external goal-form" onSubmit={(e) => saveGoal(formData, e)}>
             <div className="goal-form-internal">
                 <label htmlFor="goal-name">Goal Name: <span className="small-text">(Required)</span></label>
@@ -56,6 +57,7 @@ export default function GoalForm({ saveGoal }) {
                 <input type="submit" value="Create your goal" />
             </div>
         </form>
+
     )
 
 }

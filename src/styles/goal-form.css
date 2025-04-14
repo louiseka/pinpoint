@@ -1,16 +1,11 @@
 /* Goal Form */
 
 .goal-form {
-    position: fixed;
-    top: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
+    width: 100%;
     max-width: 600px;
-    background-color: pink;
     z-index: 1;
     box-shadow: 0px 0px 5px #011f23;
-    padding: 1.5rem;
+    background-color: #FAF9F6;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -19,9 +14,6 @@
 .goal-form-external {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    padding: 1.25em;
-    border: 10px solid #d9d9d9;
     border-radius: 5px;
     margin: 10px;
 }
@@ -73,8 +65,13 @@
     font-size: 1rem;
 }
 
-fieldset input[type="radio"]+label {
-    padding: 0 0.95em 0 0.125em;
+.goal-form input[type="radio"]+label {
+    padding: 0 0.5em 0 0.5em;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 /* Form labels and legends */
@@ -86,8 +83,11 @@ fieldset input[type="radio"]+label {
 /* Form fieldsets */
 
 .goal-form fieldset {
+    width: 100%;
+    margin: 0 auto;
     border-radius: 5px;
-    border: 0.5px black solid;
+    border: 0.5px solid black;
+    box-sizing: border-box;
 }
 
 /* Form date */
@@ -103,8 +103,26 @@ fieldset input[type="radio"]+label {
     cursor: pointer;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 650px) {
+    .goal-form {
+        position: fixed;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
+    .goal-form-internal {
+        padding: 1.25em;
+    }
+
+    .goal-form-external {
+        padding: 0.5em;
+        border: 10px solid #d9d9d9;
+    }
+
+}
+
+@media (min-width: 1024px) {
     .goal-form {
         width: 600px;
     }
@@ -119,5 +137,16 @@ fieldset input[type="radio"]+label {
     .goal-form-external,
     .saved-goal-external {
         width: 600px
+    }
+}
+
+@media (max-width: 600px) {
+    .goal-form fieldset {
+        align-items: flex-start;
+    }
+
+    .goal-form input[type="radio"]+label {
+        padding: 0.25em 0;
+        font-size: 1rem;
     }
 }

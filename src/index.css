@@ -36,7 +36,6 @@ h3 {
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0 0.5em 0.5em;
-
 }
 
 .small-text {
@@ -46,11 +45,10 @@ h3 {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: 1fr;
+  padding: 10px 5px;
   gap: 20px;
-  padding: 20px;
   max-width: 1920px;
-
 }
 
 main {
@@ -72,18 +70,10 @@ main {
 
 }
 
-@media (max-width: 635px) {
+@media(min-width: 635px) {
   .wrapper {
-    grid-template-columns: 1fr;
-    /* Force a single column */
-    padding: 10px;
-  }
-
-  .saved-goal-external {
-    width: 100%;
-    /* Ensure it fills the column */
-    max-width: none;
-    /* Just in case you had a limit */
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    padding: 20px;
   }
 }
 

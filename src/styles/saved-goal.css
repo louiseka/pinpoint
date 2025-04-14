@@ -1,13 +1,10 @@
 /* Saved Goal */
 .saved-goal-external {
-    display: flex;
-    flex-direction: column;
-    padding: 1.25em;
-    border: 10px solid #d9d9d9;
     border-radius: 5px;
     margin: 10px;
     height: 100%;
     box-sizing: border-box;
+    border: 2px solid #d9d9d9;
 }
 
 .saved-goal-internal {
@@ -164,4 +161,19 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
     background-color: #4caf50;
     /* Firefox */
+}
+
+@media (min-width: 650px) {
+    .saved-goal-external {
+        padding: 0.5em;
+        border: 10px solid #d9d9d9;
+    }
+}
+
+
+@media (max-width: 635px) {
+    .saved-goal-external {
+        width: 100%;
+        max-width: none;
+    }
 }

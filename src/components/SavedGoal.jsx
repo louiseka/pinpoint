@@ -12,7 +12,6 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
     })
 
     const value = 100 * (goalData.toDoList.filter((toDo) => toDo.complete).length / goalData.toDoList.length) || 0
-    console.log(value)
 
 
 

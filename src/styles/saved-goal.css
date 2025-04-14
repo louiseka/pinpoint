@@ -1,5 +1,24 @@
 /* Saved Goal */
 
+.saved-goal-external {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25em;
+    border: 10px solid #d9d9d9;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.saved-goal-external {
+    height: 100%;
+}
+
+.saved-goal-internal {
+    background-color: #FAF9F6;
+    border-radius: 5px;
+    padding: 1.25em;
+}
+
 /* To do form */
 
 input[type="checkbox"] {
@@ -81,11 +100,7 @@ input[type="checkbox"] {
 
 
 
-.saved-goal-internal {
-    background-color: #FAF9F6;
-    border-radius: 5px;
-    padding: 1.25em;
-}
+
 
 .goal-heading {
     display: flex;

@@ -44,6 +44,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
     }
 
     return (
+
         <div className="saved-goal-external">
             <div className="saved-goal-internal">
                 <div className="goal-heading">
@@ -89,5 +90,6 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                 </div>
             </div>
         </div>
+
     )
 }

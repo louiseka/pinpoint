@@ -105,11 +105,6 @@ fieldset input[type="radio"]+label {
 
 @media (min-width: 1024px) {
 
-    .goal-form-external,
-    .saved-goal-external {
-        width: 600px
-    }
-
     .goal-form {
         width: 600px;
     }
@@ -119,5 +114,10 @@ fieldset input[type="radio"]+label {
     .goal-form {
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .goal-form-external,
+    .saved-goal-external {
+        width: 600px
     }
 }

@@ -45,20 +45,45 @@ h3 {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 20px;
+  padding: 20px;
   max-width: 1920px;
+
 }
 
 main {
   margin: 0
 }
 
+
+
 @media (min-width: 1024px) {
   .wrapper {
-    flex-direction: row;
     margin: 0 auto 0 280px;
+  }
+}
+
+@media(min-width: 1550px) {
+  .wrapper {
+    justify-items: center;
+  }
+
+}
+
+@media (max-width: 635px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    /* Force a single column */
+    padding: 10px;
+  }
+
+  .saved-goal-external {
+    width: 100%;
+    /* Ensure it fills the column */
+    max-width: none;
+    /* Just in case you had a limit */
   }
 }
 

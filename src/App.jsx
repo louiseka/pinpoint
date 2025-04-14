@@ -137,7 +137,7 @@ function App() {
           {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
         </section>
 
-        <h2 className="secondary-header">Completed Goals</h2>
+        {goals.length > 0 && <h2 className="secondary-header">Completed Goals</h2>}
         <section className="wrapper">
 
           {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}

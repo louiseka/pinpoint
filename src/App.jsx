@@ -130,14 +130,14 @@ function App() {
 
         <section className="wrapper">
           {showGoalForm && <GoalForm saveGoal={saveGoal} closeGoalForm={closeGoalForm} />}
-          {filteredGoals.length === 0 ?
+          {filteredGoals.length === 0 && goals.length > 0 ?
             <p>No goals found for this filter.</p>
             : filteredGoals.filter((goal) => !goal.complete).map((goal) =>
               <SavedGoal goalData={goal} deleteGoal={deleteGoal} completeGoal={completeGoal} goalId={goal.id} key={goal.id} saveToDoItem={saveToDoItem} completeToDoItem={completeToDoItem} deleteToDoItem={deleteToDoItem} />)}
           {goalComplete && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => { setGoalComplete(false) }} />}
         </section>
 
-        {goals.length > 0 && <h2 className="secondary-header">Completed Goals</h2>}
+        {goals.complete && <h2 className="secondary-header">Completed Goals</h2>}
         <section className="wrapper">
 
           {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}

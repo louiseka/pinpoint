@@ -14,9 +14,8 @@ export default function CompletedGoals({ goal }) {
                     <h3>How I rewarded myself</h3>
                     <p>{goal.goalReward} </p>
                 </div>
-
-
             </div>
         </div>
+
     )
 }

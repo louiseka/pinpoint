@@ -28,7 +28,6 @@
     background-color: #FAF9F6;
     border-radius: 5px;
     padding: 1.25em;
-
 }
 
 /* Buttons */
@@ -41,10 +40,12 @@
     cursor: pointer;
     padding: 0.8em 0;
     margin: 30px 0 20px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #303030;
     font-family: "Noto Sans", serif;
+    font-weight: 400;
 }
+
 
 .close-goal-btn {
     color: red;
@@ -56,7 +57,7 @@
 
 /* Form inputs */
 
-.goal-form input,
+.form-input,
 .to-do-form input {
     padding: 0.6em;
     border-radius: 5px;
@@ -72,6 +73,10 @@
     cursor: pointer;
     font-size: 1rem;
     white-space: nowrap;
+}
+
+input[type="radio"] {
+    font-size: 0.8rem;
 }
 
 /* Form labels and legends */
@@ -94,14 +99,7 @@
 
 /* Form submits */
 
-.goal-form input[type="submit"] {
-    background-color: #747474;
-    color: #2a2a2a;
-    max-width: 40%;
-    margin: 30px 0 20px;
-    padding: 0.8em 0;
-    cursor: pointer;
-}
+
 
 @media (min-width: 650px) {
     .goal-form {
@@ -118,6 +116,10 @@
     .goal-form-external {
         padding: 0.5em;
         border: 10px solid #d9d9d9;
+    }
+
+    .create-goal-btn {
+        font-size: 1rem;
     }
 
 }
@@ -146,7 +148,7 @@
     }
 
     .goal-form input[type="radio"]+label {
-        padding: 0.25em 0;
-        font-size: 1rem;
+        padding: 0.25em 0.2em;
+        font-size: 0.8rem;
     }
 }

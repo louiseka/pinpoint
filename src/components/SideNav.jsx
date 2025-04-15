@@ -1,11 +1,6 @@
-
-
 import "/src/styles/side-nav.css"
 
 export default function SideNav({ filterParams, setFilterParams }) {
-
-    // if filterParams is already 'Moderate', set it to null instead
-    // function updateFilter(level) level === filterParams
 
     function updateFilter(level) {
         if (level === filterParams) {
@@ -26,8 +21,11 @@ export default function SideNav({ filterParams, setFilterParams }) {
                         <button className={filterParams === "Moderate" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Moderate")}>Moderate</button>
                         <button className={filterParams === "Hard" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Hard")}>Hard</button>
                         <button className={filterParams === "Stretch" ? `active-btn` : `goal-level-btn`} onClick={() => updateFilter("Stretch")}>Stretch</button>
-                        {filterParams && <button className="goal-level-btn" onClick={() => updateFilter()} >Clear filter</button>}
                     </div>
+                    <div className="clear-filter-sect">
+                        {filterParams && <button className="filter-btn" onClick={() => updateFilter()} >Clear filter</button>}
+                    </div>
+
                 </div>
 
 

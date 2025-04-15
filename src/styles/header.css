@@ -1,7 +1,7 @@
 header {
     display: flex;
     flex-direction: column;
-    padding: 2em 2em 1.2em;
+    padding: 2em 0.8em 1.2em;
 }
 
 .description {
@@ -18,10 +18,20 @@ header {
 
 }
 
+@media (min-width: 1300px) {
+    header {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+
+    }
+}
+
 @media (min-width: 1024px) {
     .countdown {
         font-size: 1.25rem;
-        padding: 0;
+        padding: 1em 0;
     }
 
     .description {
@@ -29,10 +39,6 @@ header {
     }
 
     header {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        border-bottom: 1px solid black;
         padding: 2em;
         margin: 0 0 0 280px;
     }

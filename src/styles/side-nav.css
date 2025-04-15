@@ -2,7 +2,7 @@
     background-color: pink;
     display: flex;
     flex-direction: column;
-    padding: 1em 2em;
+    padding: 1em 0.8em;
     width: 100%;
     height: auto;
     z-index: 1;
@@ -17,9 +17,9 @@
     font-weight: 500;
 }
 
-.goal-level-btn {
+.goal-level-btn,
+.filter-btn {
     cursor: pointer;
-    width: 100%;
     font-size: 0.8rem;
     background-color: #D9D9D9;
     color: black;
@@ -27,7 +27,17 @@
     border: none;
     font-family: "Noto Sans", serif;
     padding: 0.5em;
-    margin: 0.5em 0.5em;
+
+}
+
+.goal-level-btn {
+    width: 100%;
+    margin: 0.5em 0.5em 0.2em;
+}
+
+.filter-btn {
+    width: auto;
+    margin: 0 0.5em 0.5em
 }
 
 .goal-levels-filter-btns,
@@ -36,6 +46,8 @@
     flex-direction: row;
     display: flex;
 }
+
+
 
 .side-nav-actions,
 .side-nav-add {

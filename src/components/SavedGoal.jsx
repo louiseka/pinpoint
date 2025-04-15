@@ -62,7 +62,7 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
                         <label className="to-do-label" htmlFor="to-do">What I need to do:</label>
                         <div className="to-do-input">
                             <input type="text" name="toDoItem" id="to-do" value={toDoData.toDoItem} onChange={handleChange} placeholder="Add an item to your to-do list"></input>
-                            <button type="submit" className="add-btn"><FaPlus /></button>
+                            <button type="submit" className="add-btn"><FaPlus className="add-icon" /></button>
                         </div>
                     </form>
                     <ul>

@@ -3,7 +3,6 @@ import { useState } from "react"
 import { FaPlus, FaTimes } from "react-icons/fa"
 
 
-
 export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDoItem, deleteToDoItem, deleteGoal, completeGoal }) {
 
     const [toDoData, setToDoData] = useState({
@@ -12,8 +11,6 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
     })
 
     const value = 100 * (goalData.toDoList.filter((toDo) => toDo.complete).length / goalData.toDoList.length) || 0
-
-
 
 
     function handleChange(e) {
@@ -83,11 +80,14 @@ export default function SavedGoal({ goalData, goalId, saveToDoItem, completeToDo
 
                     <progress id="goal-progress" value={value} max={100}>{value}</progress>
                 </div>
+
+
                 <div className="goal-footer">
-                    {goalData.goalDeadline && <p> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>}
                     <button className="goal-complete-btn" onClick={() => completeGoal(goalId)}>Mark goal as achieved</button>
                     <button className="delete-goal-btn" onClick={() => deleteGoal(goalId)}>Delete goal</button>
                 </div>
+
+                {goalData.goalDeadline && <p className="small-text goal-deadline"> <span className="small-bold-text"> I want to achieve it by: </span> {goalData.goalDeadline} </p>}
             </div>
         </div>
 

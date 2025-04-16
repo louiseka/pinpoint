@@ -30,7 +30,7 @@ function App() {
       if (!filterParams) {
         return goals
       }
-      return goals.filter(goal => goal.goalLevel === filterParams)
+      return goals.filter(goal => goal.goalLevel === filterParams && !goal.complete)
     },
     [goals, filterParams]
   )

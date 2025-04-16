@@ -65,7 +65,7 @@ main {
 
 @media(min-width: 1550px) {
   .wrapper {
-    justify-items: center;
+    justify-items: left;
   }
 
 }

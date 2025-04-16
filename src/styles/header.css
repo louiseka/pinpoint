@@ -14,7 +14,8 @@ header {
 }
 
 .secondary-header {
-    padding: 2em 1.3em 1.2em;
+    padding: 2em 0.8em 0.5em;
+    margin: 0;
 
 }
 
@@ -45,5 +46,6 @@ header {
 
     .secondary-header {
         margin: 0 0 0 280px;
+        padding: 2em 1.3em 0.5em;
     }
 }

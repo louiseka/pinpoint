@@ -3,8 +3,8 @@
 .add-goal-btn {
     cursor: pointer;
     font-size: 0.8rem;
-    background-color: #D9D9D9;
-    color: black;
+    background-color: var(--color3);
+    color: #303030;
     border-radius: 5px;
     border: none;
     font-family: "Noto Sans", serif;

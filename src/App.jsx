@@ -5,6 +5,8 @@ import AddGoal from "./components/AddGoal"
 import CompletedGoal from "./components/CompletedGoal"
 import SideNav from "./components/SideNav"
 
+import "./styles/themes.css"
+
 import { useState, useEffect, useMemo } from "react"
 import { nanoid } from "nanoid"
 import { useWindowSize } from "react-use"
@@ -22,6 +24,8 @@ function App() {
     const persistedGoals = window.localStorage.getItem("persisted-goals")
     return persistedGoals !== null ? JSON.parse(persistedGoals) : []
   })
+
+  const [theme, setTheme] = useState("theme-a")
 
   const [filterParams, setFilterParams] = useState(null)
 
@@ -119,12 +123,12 @@ function App() {
 
 
   return (
-    <>
+    <div className={theme}>
       <Header />
       <main>
         <section className="side-nav">
           {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
-          <SideNav filterParams={filterParams} setFilterParams={setFilterParams} />
+          <SideNav filterParams={filterParams} setFilterParams={setFilterParams} setTheme={setTheme} />
         </section>
 
 
@@ -143,7 +147,7 @@ function App() {
           {goals.filter((goal) => goal.complete).map((goal) => <CompletedGoal key={goal.id} goal={goal} />)}
         </section>
       </main>
-    </>
+    </div>
   )
 }
 

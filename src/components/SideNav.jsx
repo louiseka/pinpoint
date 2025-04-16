@@ -1,6 +1,6 @@
 import "/src/styles/side-nav.css"
 
-export default function SideNav({ filterParams, setFilterParams }) {
+export default function SideNav({ filterParams, setFilterParams, setTheme }) {
 
     function updateFilter(level) {
         if (level === filterParams) {
@@ -8,6 +8,10 @@ export default function SideNav({ filterParams, setFilterParams }) {
         } else {
             setFilterParams(level)
         }
+    }
+
+    function updateTheme(theme) {
+        setTheme(theme)
     }
 
 
@@ -29,14 +33,14 @@ export default function SideNav({ filterParams, setFilterParams }) {
                 </div>
 
 
-
+                {/* write a onclick function that adds class list...e.g. theme-a */}
                 <div className="theme-nav">
                     <h2>Choose your theme</h2>
                     <div className="theme-btns">
-                        <button className="goal-level-btn">Theme 1</button>
-                        <button className="goal-level-btn">Theme 2</button>
-                        <button className="goal-level-btn">Theme 3 </button>
-                        <button className="goal-level-btn">Theme 4</button>
+                        <button className="goal-level-btn" onClick={() => updateTheme("theme-a")}>Theme 1</button>
+                        <button className="goal-level-btn" onClick={() => updateTheme("theme-b")}>Theme 2</button>
+                        <button className="goal-level-btn" onClick={() => updateTheme("theme-c")}>Theme 3 </button>
+                        <button className="goal-level-btn" onClick={() => updateTheme("theme-d")}>Theme 4</button>
                     </div>
                 </div>
             </div>

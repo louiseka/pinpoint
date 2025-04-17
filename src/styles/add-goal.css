@@ -3,13 +3,19 @@
 .add-goal-btn {
     cursor: pointer;
     font-size: 0.8rem;
-    background-color: var(--color3);
+    background-color: var(--color2);
     color: #303030;
     border-radius: 5px;
     border: none;
     font-family: "Noto Sans", serif;
     padding: 0.5em 1em;
     margin: 0.5em 0.5em 1em;
+}
+
+.add-goal-btn:active,
+.add-goal-btn:focus,
+.add-goal-btn:hover {
+    background-color: var(--color4);
 }
 
 

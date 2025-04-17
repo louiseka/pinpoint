@@ -5,11 +5,11 @@
     height: 100%;
     box-sizing: border-box;
     border: 2px solid var(--color1);
-    background-color: var(--color3);
+    background-color: #FAF9F6;
 }
 
 .saved-goal-internal {
-    background-color: var(--color3);
+    background-color: #FAF9F6;
     border-radius: 5px;
     padding: 1.25em;
 }
@@ -73,6 +73,7 @@
     padding: 0;
     width: 1em;
     height: 1em;
+    cursor: pointer;
 }
 
 .delete-btn {
@@ -164,6 +165,15 @@
     font-family: "Noto Sans", serif;
 }
 
+.goal-complete-btn:active,
+.goal-complete-btn:focus,
+.goal-complete-btn:hover,
+.add-btn:active,
+.add-btn:focus,
+.add-btn:hover {
+    background-color: var(--color4);
+}
+
 progress {
     width: 100%;
     height: 20px;
@@ -192,7 +202,7 @@ progress::-moz-progress-bar {
 @media (min-width: 650px) {
     .saved-goal-external {
         padding: 0.5em;
-        border: 10px solid var(--color1);
+        border: 6px solid var(--color1);
     }
 
     .goal-heading h2 {

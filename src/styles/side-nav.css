@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     overflow-x: hidden;
-    background-color: var(--color4);
+    background-color: #FAF9F6;
 }
 
 .side-nav h2 {
@@ -19,6 +19,7 @@
 }
 
 .goal-level-btn,
+.theme-btn,
 .filter-btn {
     cursor: pointer;
     font-size: 0.8rem;
@@ -29,16 +30,31 @@
     padding: 0.5em;
 }
 
-.goal-level-btn {
+.goal-level-btn,
+.theme-btn {
     width: 100%;
     margin: 0.5em 0.5em 0.2em;
-    background-color: var(--color3);
+    background-color: var(--color2);
+}
+
+
+
+.goal-level-btn:active,
+.goal-level-btn:focus,
+.goal-level-btn:hover,
+.theme-btn:active,
+.theme-btn:focus,
+.theme-btn:hover,
+.filter-btn:active,
+.filter-btn:focus,
+.filter-btn:hover {
+    background-color: var(--color4);
 }
 
 .filter-btn {
     width: auto;
     margin: 0 0.5em 0.5em;
-    background-color: var(--color3);
+    background-color: var(--color2);
 }
 
 .goal-levels-filter-btns,
@@ -59,7 +75,7 @@
 }
 
 .active-btn {
-    background-color: var(--color2);
+    background-color: var(--color4);
     color: #303030;
     cursor: pointer;
     width: 100%;
@@ -78,7 +94,7 @@
         flex-direction: column;
         height: 100%;
         width: 280px;
-        padding: 8em 2em;
+        padding: 10em 2em;
         position: fixed
     }
 

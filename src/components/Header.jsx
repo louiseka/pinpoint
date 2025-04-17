@@ -11,7 +11,8 @@ export default function Header() {
         <header>
             <div>
                 <h1>Pinpoint</h1>
-                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt metus vel est</p>
+                <p className="description">Pinpoint offers you a dedicated space to clearly define the why and how behind your goals, helping you stay focused, motivated, and intentional throughout your journey.</p>
+
             </div>
             <p className="countdown"><span className="medium-bold-text">{days}</span> days until 31 December</p>
         </header>

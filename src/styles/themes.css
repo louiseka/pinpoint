@@ -3,7 +3,7 @@
     --color2: #FEC4DD;
     --color3: #F9F0F2;
     --color4: #88BEFF;
-    background-color: #F9F0F2;
+    background-color: #FAF9F6;
 }
 
 .theme-b {
@@ -11,7 +11,7 @@
     --color2: #86C7D6;
     --color3: #FAF5E0;
     --color4: #86D68E;
-    background-color: #FAF5E0;
+    background-color: #FAF9F6;
 }
 
 .theme-c {
@@ -19,7 +19,7 @@
     --color2: #BADD7F;
     --color3: #F7EFDA;
     --color4: #EFACA5;
-    background-color: #F7EFDA;
+    background-color: #FAF9F6;
 }
 
 .theme-d {
@@ -27,7 +27,7 @@
     --color2: #FFA175;
     --color3: #F4F3E6;
     --color4: #3CC8FC;
-    background-color: #F4F3E6;
+    background-color: #FAF9F6;
 }
 
 /* .button {

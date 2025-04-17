@@ -6,6 +6,8 @@ header {
 
 .description {
     padding: 0.4em 0 0;
+    line-height: 1.5;
+    max-width: 800px;
 }
 
 .countdown {
@@ -24,27 +26,27 @@ header {
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
-        border-bottom: 1px solid #303030;
+        /* border-bottom: 0.5px solid #303030; */
     }
 }
 
 @media (min-width: 1024px) {
     .countdown {
         font-size: 1.25rem;
-        padding: 1em 0;
+        padding: 1em 1.5em 1em 0;
     }
 
     .description {
-        padding: 0;
+        padding: 0.5em 0;
     }
 
     header {
-        padding: 2em 0;
-        margin: 0 0 0 320px;
+        padding: 4em 0 3em;
+        margin: 0 0 0 280px;
     }
 
     .secondary-header {
-        margin: 0 0 0 320px;
+        margin: 0 0 0 280px;
         padding: 2em 1.3em 0.5em;
     }
 }

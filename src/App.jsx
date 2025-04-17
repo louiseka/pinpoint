@@ -128,7 +128,7 @@ function App() {
       <main>
         <section className="side-nav">
           {!showGoalForm && <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />}
-          <SideNav filterParams={filterParams} setFilterParams={setFilterParams} setTheme={setTheme} />
+          <SideNav filterParams={filterParams} setFilterParams={setFilterParams} setTheme={setTheme} theme={theme} goals={goals} />
         </section>
 
 

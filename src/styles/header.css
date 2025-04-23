@@ -42,11 +42,11 @@ header {
 
     header {
         padding: 4em 0 3em;
-        margin: 0 0 0 280px;
+        margin: 0 0 0 17.5em;
     }
 
     .secondary-header {
-        margin: 0 0 0 280px;
+        margin: 0 0 0 11em;
         padding: 2em 1.3em 0.5em;
     }
 }

@@ -1,13 +1,5 @@
 # Pinpoint
 
-## Install
-
-Make a copy of this repository and then use the following commands in your terminal:
-
-`npm install` to install dependencies
-
-`npm run dev` to start the dev server
-
 ## Description
 
 ### What is Pinpoint?
@@ -27,3 +19,7 @@ I have used React for this project:
 - Toggle to turn off the countdown to the end of the year.
 - Drag and drop to rearrange goals.
 - Countdown for individual goal deadlines. 
+
+## License
+
+This project is licensed under a proprietary license. All rights reserved. You may not copy, modify, distribute, or use any part of this code without explicit written permission from the author.

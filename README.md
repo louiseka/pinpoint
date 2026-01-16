@@ -1,25 +1,50 @@
-# Pinpoint
+# Pinpoint 🎯
 
-## Description
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### What is Pinpoint?
-Pinpoint is a dedicated space to help you track your goals while staying focused and motivated. Feature-wise, users can choose from four colour themes, sort goals by levels, break them down into to-do lists, and monitor progress with a progress bar.
+## Live Project
+🌐 **Live Site:** https://louiseka.github.io/pinpoint/
 
+## What is Pinpoint?
+**Pinpoint** is a web application designed to help users track their goals while staying focused and motivated.  
 
-### Technologies used
+Feature highlights:  
+- Choose from **four colour themes**  
+- Sort goals by levels  
+- Break goals down into **to-do lists**  
+- Monitor progress with a **progress bar**
 
-I have used React for this project:
+The project focuses on **React component design**, state management, and reusable logic.
 
-- I was able to create reusable components for the saved goals.
-- Create and maintain state in the parent component and pass it down to the child components.
-- I’ve used callback functions in child components to modify the goals state in the parent component. 
+## Features
+- Reusable components for saved goals  
+- State maintained in parent components and passed to child components  
+- Callback functions in child components to update parent state  
 
-## Implementations for the future
+## Technologies Used
+- **React** – Component-based UI  
+- **JavaScript** – Logic and interactivity  
+- **CSS** – Styling and layout  
 
-- Toggle to turn off the countdown to the end of the year.
-- Drag and drop to rearrange goals.
-- Countdown for individual goal deadlines. 
+## Future Improvements
+- Toggle to turn off the countdown to the end of the year  
+- Drag-and-drop functionality to rearrange goals  
+- Countdown timers for individual goal deadlines  
 
-## License
+## Installation (Local Development)
+To run the project locally:
 
-This project is licensed under a proprietary license. All rights reserved. You may not copy, modify, distribute, or use any part of this code without explicit written permission from the author.
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/pinpoint.git
+
+# Navigate into the project directory
+cd pinpoint
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start

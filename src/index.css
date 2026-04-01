@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-
 }
 
 *,
@@ -12,7 +11,7 @@ html {
 body {
   font-family: "Noto Sans", serif;
   color: #303030;
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
   font-size: 1rem;
   margin: 0;
 }
@@ -57,10 +56,19 @@ h3 {
 }
 
 main {
-  margin: 0
+  margin: 0;
 }
 
-
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
 @media (min-width: 1024px) {
   .wrapper {
@@ -68,14 +76,13 @@ main {
   }
 }
 
-@media(min-width: 1550px) {
+@media (min-width: 1550px) {
   .wrapper {
     justify-items: left;
   }
-
 }
 
-@media(min-width: 635px) {
+@media (min-width: 635px) {
   .wrapper {
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     padding: 20px;

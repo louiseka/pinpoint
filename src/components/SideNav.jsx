@@ -77,34 +77,42 @@ export default function SideNav({
           </div>
         )}
 
-        <div className="theme-nav" role="group" aria-labelledby="theme-heading">
+        <div
+          className="theme-nav"
+          role="radiogroup"
+          aria-labelledby="theme-heading"
+        >
           <h2 id="theme-heading">Choose your theme</h2>
           <div className="theme-btns">
             <button
+              role="radio"
+              aria-checked={theme === "theme-a"}
               className={theme === "theme-a" ? `active-btn` : `theme-btn`}
               onClick={() => updateTheme("theme-a")}
-              aria-pressed={theme === "theme-a"}
             >
               Blush
             </button>
             <button
+              role="radio"
+              aria-checked={theme === "theme-b"}
               className={theme === "theme-b" ? `active-btn` : `theme-btn`}
               onClick={() => updateTheme("theme-b")}
-              aria-pressed={theme === "theme-b"}
             >
               Aqua
             </button>
             <button
+              role="radio"
+              aria-checked={theme === "theme-c"}
               className={theme === "theme-c" ? `active-btn` : `theme-btn`}
               onClick={() => updateTheme("theme-c")}
-              aria-pressed={theme === "theme-c"}
             >
               Evergreen{" "}
             </button>
             <button
+              role="radio"
+              aria-checked={theme === "theme-d"}
               className={theme === "theme-d" ? `active-btn` : `theme-btn`}
               onClick={() => updateTheme("theme-d")}
-              aria-pressed={theme === "theme-d"}
             >
               Orange{" "}
             </button>

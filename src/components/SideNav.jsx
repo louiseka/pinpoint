@@ -1,4 +1,5 @@
 import "/src/styles/side-nav.css";
+import { FaCheck } from "react-icons/fa";
 
 export default function SideNav({
   filterParams,
@@ -38,6 +39,7 @@ export default function SideNav({
                 aria-pressed={filterParams === "Easy"}
               >
                 Easy
+                {filterParams === "Easy" && <FaCheck aria-hidden="true" />}
               </button>
               <button
                 className={
@@ -47,6 +49,7 @@ export default function SideNav({
                 aria-pressed={filterParams === "Moderate"}
               >
                 Moderate
+                {filterParams === "Moderate" && <FaCheck aria-hidden="true" />}
               </button>
               <button
                 className={
@@ -56,6 +59,7 @@ export default function SideNav({
                 aria-pressed={filterParams === "Hard"}
               >
                 Hard
+                {filterParams === "Hard" && <FaCheck aria-hidden="true" />}
               </button>
               <button
                 className={
@@ -65,6 +69,7 @@ export default function SideNav({
                 aria-pressed={filterParams === "Stretch"}
               >
                 Stretch
+                {filterParams === "Stretch" && <FaCheck aria-hidden="true" />}
               </button>
             </div>
             <div className="clear-filter-sect">
@@ -91,6 +96,7 @@ export default function SideNav({
               onClick={() => updateTheme("theme-a")}
             >
               Blush
+              {theme === "theme-a" && <FaCheck aria-hidden="true" />}
             </button>
             <button
               role="radio"
@@ -99,6 +105,7 @@ export default function SideNav({
               onClick={() => updateTheme("theme-b")}
             >
               Aqua
+              {theme === "theme-b" && <FaCheck aria-hidden="true" />}
             </button>
             <button
               role="radio"
@@ -107,6 +114,7 @@ export default function SideNav({
               onClick={() => updateTheme("theme-c")}
             >
               Evergreen
+              {theme === "theme-c" && <FaCheck aria-hidden="true" />}
             </button>
             <button
               role="radio"
@@ -115,6 +123,7 @@ export default function SideNav({
               onClick={() => updateTheme("theme-d")}
             >
               Orange
+              {theme === "theme-d" && <FaCheck aria-hidden="true" />}
             </button>
           </div>
         </div>

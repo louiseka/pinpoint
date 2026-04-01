@@ -44,9 +44,13 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
         />
 
         <fieldset>
-          <legend>What level is your goal?</legend>
+          <legend>
+            What level is your goal?{" "}
+            <span className="small-text">(Required)</span>
+          </legend>
           <input
             className="form-input"
+            required
             type="radio"
             id="goalLevel1"
             name="goalLevel"
@@ -57,6 +61,7 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
           <label htmlFor="goalLevel1">Easy</label>
           <input
             className="form-input"
+            required
             type="radio"
             id="goalLevel2"
             name="goalLevel"
@@ -67,6 +72,7 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
           <label htmlFor="goalLevel2">Moderate</label>
           <input
             className="form-input"
+            required
             type="radio"
             id="goalLevel3"
             name="goalLevel"
@@ -77,6 +83,7 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
           <label htmlFor="goalLevel3">Hard</label>
           <input
             className="form-input"
+            required
             type="radio"
             id="goalLevel4"
             name="goalLevel"
@@ -116,7 +123,8 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
         />
 
         <label htmlFor="deadline">
-          When do you want to achieve this goal by?
+          When do you want to achieve this goal by?{" "}
+          <span className="small-text">(In the format dd/mm/yyyy)</span>
         </label>
         <input
           className="form-input"
@@ -124,7 +132,7 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
           name="goalDeadline"
           id="deadline"
           min={`${year}-${month}-${day}`}
-          max="2025-12-31"
+          max="2040-12-31"
           value={formData.goalDeadline}
           onChange={handleChange}
         />

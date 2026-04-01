@@ -168,7 +168,7 @@ function App() {
               width={width}
               height={height}
               recycle={false}
-              tweenDuration={2000}
+              tweenDuration={5000}
               onConfettiComplete={() => {
                 setGoalComplete(false);
               }}

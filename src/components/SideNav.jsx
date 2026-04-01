@@ -106,7 +106,7 @@ export default function SideNav({
               className={theme === "theme-c" ? `active-btn` : `theme-btn`}
               onClick={() => updateTheme("theme-c")}
             >
-              Evergreen{" "}
+              Evergreen
             </button>
             <button
               role="radio"
@@ -114,7 +114,7 @@ export default function SideNav({
               className={theme === "theme-d" ? `active-btn` : `theme-btn`}
               onClick={() => updateTheme("theme-d")}
             >
-              Orange{" "}
+              Orange
             </button>
           </div>
         </div>

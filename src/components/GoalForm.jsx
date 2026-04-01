@@ -1,5 +1,5 @@
 import "/src/styles/goal-form.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function GoalForm({ saveGoal, closeGoalForm }) {
   const [formData, setFormData] = useState({
@@ -18,6 +18,18 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
       };
     });
   }
+
+  useEffect(() => {
+    function handleEscape(e) {
+      if (e.key === "Escape") {
+        closeGoalForm();
+      }
+    }
+    window.addEventListener("keydown", handleEscape);
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [closeGoalForm]);
 
   const todaysDate = new Date();
   const year = todaysDate.getFullYear();

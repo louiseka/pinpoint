@@ -1,52 +1,51 @@
 header {
-    display: flex;
-    flex-direction: column;
-    padding: 2em 0.8em 1.2em;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 0.8em 1.2em;
 }
 
 .description {
-    padding: 0.4em 0 0;
-    line-height: 1.5;
-    max-width: 800px;
+  padding: 0.4em 0 0;
+  line-height: 1.5;
+  max-width: 800px;
 }
 
 .countdown {
-    font-size: 1rem;
-    padding: 1.2em 0 0;
+  font-size: 1rem;
+  padding: 1.2em 0 0;
 }
 
 .secondary-header {
-    padding: 2em 0.8em 0.5em;
-    margin: 0;
-
+  padding: 2em 0.8em 0.5em;
+  margin: 0;
 }
 
 @media (min-width: 1300px) {
-    header {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        /* border-bottom: 0.5px solid #303030; */
-    }
+  header {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border-bottom: 0.5px solid #303030; */
+  }
 }
 
 @media (min-width: 1024px) {
-    .countdown {
-        font-size: 1.2rem;
-        padding: 1em 1.5em 1em 0;
-    }
+  .countdown {
+    font-size: 1.2rem;
+    padding: 1em 1.5em 1em 0;
+  }
 
-    .description {
-        padding: 0.5em 0;
-    }
+  .description {
+    padding: 0.5em 0;
+  }
 
-    header {
-        padding: 4em 0 3em;
-        margin: 0 0 0 17.5em;
-    }
+  header {
+    padding: 4em 0 3em;
+    margin: 0 0 0 17.5em;
+  }
 
-    .secondary-header {
-        margin: 0 0 0 11em;
-        padding: 2em 1.3em 0.5em;
-    }
+  .secondary-header {
+    margin: 0 0 0 11em;
+    padding: 2em 1.3em 0.5em;
+  }
 }

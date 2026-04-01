@@ -1,29 +1,27 @@
 /* Add Goal */
 
 .add-goal-btn {
-    cursor: pointer;
-    font-size: 0.8rem;
-    background-color: var(--color2);
-    color: #303030;
-    border-radius: 5px;
-    border: none;
-    font-family: "Noto Sans", serif;
-    padding: 0.5em 1em;
-    margin: 0.5em 0.5em 1em;
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-color: var(--color2);
+  color: #303030;
+  border-radius: 5px;
+  border: none;
+  font-family: "Noto Sans", serif;
+  padding: 0.5em 1em;
+  margin: 0.5em 0.5em 1em;
 }
 
 .add-goal-btn:active,
 .add-goal-btn:focus,
 .add-goal-btn:hover {
-    background-color: var(--color4);
+  background-color: var(--color4);
 }
 
-
-
 @media (min-width: 1024px) {
-    .add-goal-btn {
-        margin: 0.5em 0 1em;
-        padding: 0.5em 1em;
-        width: 100%;
-    }
+  .add-goal-btn {
+    margin: 0.5em 0 1em;
+    padding: 0.5em 1em;
+    width: 100%;
+  }
 }

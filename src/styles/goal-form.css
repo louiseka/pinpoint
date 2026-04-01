@@ -1,154 +1,150 @@
 /* Goal Form */
 
 .goal-form {
-    width: auto;
-    max-width: 600px;
-    z-index: 1;
-    box-shadow: 0px 0px 5px #303030;
-    background-color: var(--color3);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+  width: auto;
+  max-width: 600px;
+  z-index: 1;
+  box-shadow: 0px 0px 5px #303030;
+  background-color: var(--color3);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .goal-form-external {
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    margin: 0.625em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 0.625em;
 }
 
 .goal-form-external {
-    height: auto;
+  height: auto;
 }
 
 .goal-form-internal {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color3);
-    border-radius: 5px;
-    padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color3);
+  border-radius: 5px;
+  padding: 1.25em;
 }
 
 /* Buttons */
 
 .create-goal-btn {
-    border: none;
-    border-radius: 5px;
-    background-color: var(--color2);
-    width: 40%;
-    cursor: pointer;
-    padding: 0.8em 0;
-    margin: 1.8em 0 1.25em;
-    font-size: 0.8rem;
-    color: #303030;
-    font-family: "Noto Sans", serif;
-    font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color2);
+  width: 40%;
+  cursor: pointer;
+  padding: 0.8em 0;
+  margin: 1.8em 0 1.25em;
+  font-size: 0.8rem;
+  color: #303030;
+  font-family: "Noto Sans", serif;
+  font-weight: 400;
 }
 
-
 .close-goal-btn {
-    color: #303030;
-    border: none;
-    background-color: transparent;
-    font-weight: 600;
-    cursor: pointer;
+  color: #303030;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* Form inputs */
 
 .form-input,
 .to-do-form input {
-    padding: 0.6em;
-    border-radius: 5px;
-    border: none;
-    font-family: "Noto Sans", serif;
-    font-size: 1rem;
+  padding: 0.6em;
+  border-radius: 5px;
+  border: none;
+  font-family: "Noto Sans", serif;
+  font-size: 1rem;
 }
 
-.goal-form input[type="radio"]+label {
-    padding: 0 0.5em 0 0.5em;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1rem;
-    white-space: nowrap;
+.goal-form input[type="radio"] + label {
+  padding: 0 0.5em 0 0.5em;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 input[type="radio"] {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 /* Form labels and legends */
 .goal-form label,
 .goal-form legend {
-    padding: 0.95em 0 0.65em;
+  padding: 0.95em 0 0.65em;
 }
 
 /* Form fieldsets */
 
 .goal-form fieldset {
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 5px;
-    border: 0.5px solid black;
-    box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 0.5px solid black;
+  box-sizing: border-box;
 }
 
 /* Form date */
 
 /* Form submits */
 
-
-
 @media (min-width: 650px) {
-    .goal-form {
-        position: fixed;
-        top: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  .goal-form {
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-    .goal-form-internal {
-        padding: 1.25em;
-    }
+  .goal-form-internal {
+    padding: 1.25em;
+  }
 
-    .goal-form-external {
-        padding: 0.5em;
-        border: 10px solid var(--color1);
-    }
+  .goal-form-external {
+    padding: 0.5em;
+    border: 10px solid var(--color1);
+  }
 
-    .create-goal-btn {
-        font-size: 1rem;
-    }
-
+  .create-goal-btn {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 1024px) {
-    .goal-form {
-        width: 600px;
-    }
+  .goal-form {
+    width: 600px;
+  }
 }
 
-@media(min-width: 1550px) {
-    .goal-form {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+@media (min-width: 1550px) {
+  .goal-form {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-    .goal-form-external,
-    .saved-goal-external {
-        width: 600px
-    }
+  .goal-form-external,
+  .saved-goal-external {
+    width: 600px;
+  }
 }
 
 @media (max-width: 600px) {
-    .goal-form fieldset {
-        align-items: flex-start;
-    }
+  .goal-form fieldset {
+    align-items: flex-start;
+  }
 
-    .goal-form input[type="radio"]+label {
-        padding: 0.25em 0.2em;
-        font-size: 0.8rem;
-    }
+  .goal-form input[type="radio"] + label {
+    padding: 0.25em 0.2em;
+    font-size: 0.8rem;
+  }
 }

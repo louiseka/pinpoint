@@ -142,12 +142,14 @@ export default function SavedGoal({
           <button
             className="goal-complete-btn"
             onClick={() => completeGoal(goalId)}
+            aria-label={`Mark ${goalData.goalName} as achieved`}
           >
             Mark goal as achieved
           </button>
           <button
             className="delete-goal-btn"
             onClick={() => deleteGoal(goalId)}
+            aria-label={`Delete goal: ${goalData.goalName}`}
           >
             Delete goal
           </button>

@@ -1,5 +1,5 @@
 import "/src/styles/goal-form.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function GoalForm({ saveGoal, closeGoalForm }) {
   const [formData, setFormData] = useState({
@@ -10,6 +10,41 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
     goalDeadline: "",
   });
 
+  const firstInputRef = useRef(null);
+  const lastButtonRef = useRef(null);
+
+  useEffect(() => {
+    const elementToFocusBackTo = document.activeElement;
+
+    firstInputRef.current?.focus();
+
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        closeGoalForm();
+      }
+
+      if (e.key === "Tab") {
+        const firstElement = firstInputRef.current;
+        const lastElement = lastButtonRef.current;
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      elementToFocusBackTo?.focus();
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeGoalForm]);
+
   function handleChange(e) {
     setFormData((prevFormData) => {
       return {
@@ -18,18 +53,6 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
       };
     });
   }
-
-  useEffect(() => {
-    function handleEscape(e) {
-      if (e.key === "Escape") {
-        closeGoalForm();
-      }
-    }
-    window.addEventListener("keydown", handleEscape);
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, [closeGoalForm]);
 
   const todaysDate = new Date();
   const year = todaysDate.getFullYear();
@@ -46,6 +69,7 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
           Goal Name: <span className="small-text">(Required)</span>
         </label>
         <input
+          ref={firstInputRef}
           required
           className="form-input"
           type="text"
@@ -155,7 +179,12 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
             type="submit"
             value="Create your goal"
           />
-          <button className="close-goal-btn" onClick={() => closeGoalForm()}>
+          <button
+            type="button"
+            ref={lastButtonRef}
+            className="close-goal-btn"
+            onClick={() => closeGoalForm()}
+          >
             Close goal form
           </button>
         </div>

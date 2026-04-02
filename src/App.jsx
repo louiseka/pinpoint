@@ -129,9 +129,8 @@ function App() {
       <Header />
       <main>
         <aside className="side-nav">
-          {!showGoalForm && (
-            <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />
-          )}
+          <AddGoal renderGoalForm={renderGoalForm} goalData={goals} />
+
           <SideNav
             filterParams={filterParams}
             setFilterParams={setFilterParams}

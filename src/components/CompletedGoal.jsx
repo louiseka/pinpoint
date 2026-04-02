@@ -3,13 +3,13 @@ export default function CompletedGoals({ goal }) {
     <section className="saved-goal-external">
       <div className="saved-goal-internal">
         <div className="goal-heading">
-          <h2>{goal.goalName}</h2>
+          <h3>{goal.goalName}</h3>
           <p className="goal-label">Completed</p>
         </div>
         <div className="goal-details">
-          <h3>Why I wanted it</h3>
+          <h4>Why I wanted it</h4>
           <p>{goal.goalReason} </p>
-          <h3>How I rewarded myself</h3>
+          <h4>How I rewarded myself</h4>
           <p>{goal.goalReward} </p>
         </div>
       </div>

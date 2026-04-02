@@ -52,16 +52,16 @@ export default function SavedGoal({
     <section className="saved-goal-external">
       <div className="saved-goal-internal">
         <div className="goal-heading">
-          <h2>{goalData.goalName}</h2>
+          <h3>{goalData.goalName}</h3>
           <p className="goal-label">
             <span className="visually-hidden">Difficulty:</span>
             {goalData.goalLevel}
           </p>
         </div>
         <div className="goal-details">
-          <h3>Why I want it</h3>
+          <h4>Why I want it</h4>
           <p>{goalData.goalReason} </p>
-          <h3>Reward for doing it</h3>
+          <h4>Reward for doing it</h4>
           <p>{goalData.goalReward} </p>
         </div>
         <div className="to-do-form">

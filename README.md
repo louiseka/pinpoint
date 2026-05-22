@@ -38,7 +38,7 @@ To run the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pinpoint.git
+git clone https://github.com/louiseka/pinpoint.git
 
 # Navigate into the project directory
 cd pinpoint

@@ -60,135 +60,138 @@ export default function GoalForm({ saveGoal, closeGoalForm }) {
   const day = String(todaysDate.getDate()).padStart(2, "0");
 
   return (
-    <form
-      className="goal-form-external goal-form"
-      onSubmit={(e) => saveGoal(formData, e)}
-    >
-      <div className="goal-form-internal">
-        <label htmlFor="goal-name">
-          Goal Name: <span className="small-text">(Required)</span>
-        </label>
-        <input
-          ref={firstInputRef}
-          required
-          className="form-input"
-          type="text"
-          name="goalName"
-          id="goal-name"
-          value={formData.goalName}
-          onChange={handleChange}
-        />
+    <div role="dialog" aria-modal="true" aria-labelledby="goal-form-title">
+      <form
+        className="goal-form-external goal-form"
+        onSubmit={(e) => saveGoal(formData, e)}
+      >
+        <div className="goal-form-internal">
+          <h2 id="goal-form-title">Create a goal</h2>
+          <label htmlFor="goal-name">
+            Goal Name: <span className="small-text">(Required)</span>
+          </label>
+          <input
+            ref={firstInputRef}
+            required
+            className="form-input"
+            type="text"
+            name="goalName"
+            id="goal-name"
+            value={formData.goalName}
+            onChange={handleChange}
+          />
 
-        <fieldset>
-          <legend>
-            What level is your goal?{" "}
+          <fieldset>
+            <legend>
+              What level is your goal?{" "}
+              <span className="small-text">(Required)</span>
+            </legend>
+            <input
+              className="form-input"
+              required
+              type="radio"
+              id="goalLevel1"
+              name="goalLevel"
+              value="Easy"
+              checked={formData.goalLevel === "Easy"}
+              onChange={handleChange}
+            />
+            <label htmlFor="goalLevel1">Easy</label>
+            <input
+              className="form-input"
+              required
+              type="radio"
+              id="goalLevel2"
+              name="goalLevel"
+              value="Moderate"
+              checked={formData.goalLevel === "Moderate"}
+              onChange={handleChange}
+            />
+            <label htmlFor="goalLevel2">Moderate</label>
+            <input
+              className="form-input"
+              required
+              type="radio"
+              id="goalLevel3"
+              name="goalLevel"
+              value="Hard"
+              checked={formData.goalLevel === "Hard"}
+              onChange={handleChange}
+            />
+            <label htmlFor="goalLevel3">Hard</label>
+            <input
+              className="form-input"
+              required
+              type="radio"
+              id="goalLevel4"
+              name="goalLevel"
+              value="Stretch"
+              checked={formData.goalLevel === "Stretch"}
+              onChange={handleChange}
+            />
+            <label htmlFor="goalLevel4">Stretch</label>
+          </fieldset>
+
+          <label htmlFor="goal-reason">
+            Why do you want to achieve this goal?{" "}
             <span className="small-text">(Required)</span>
-          </legend>
+          </label>
           <input
-            className="form-input"
             required
-            type="radio"
-            id="goalLevel1"
-            name="goalLevel"
-            value="Easy"
-            checked={formData.goalLevel === "Easy"}
+            className="form-input"
+            type="text"
+            name="goalReason"
+            id="goal-reason"
+            value={formData.goalReason}
             onChange={handleChange}
           />
-          <label htmlFor="goalLevel1">Easy</label>
+
+          <label htmlFor="goal-reward">
+            What will you reward yourself with?{" "}
+            <span className="small-text">(Required)</span>
+          </label>
           <input
-            className="form-input"
             required
-            type="radio"
-            id="goalLevel2"
-            name="goalLevel"
-            value="Moderate"
-            checked={formData.goalLevel === "Moderate"}
+            className="form-input"
+            type="text"
+            name="goalReward"
+            id="goal-reward"
+            value={formData.goalReward}
             onChange={handleChange}
           />
-          <label htmlFor="goalLevel2">Moderate</label>
+
+          <label htmlFor="deadline">
+            When do you want to achieve this goal by?{" "}
+            <span className="small-text">(In the format dd/mm/yyyy)</span>
+          </label>
           <input
             className="form-input"
-            required
-            type="radio"
-            id="goalLevel3"
-            name="goalLevel"
-            value="Hard"
-            checked={formData.goalLevel === "Hard"}
+            type="date"
+            name="goalDeadline"
+            id="deadline"
+            min={`${year}-${month}-${day}`}
+            max="2040-12-31"
+            value={formData.goalDeadline}
             onChange={handleChange}
           />
-          <label htmlFor="goalLevel3">Hard</label>
-          <input
-            className="form-input"
-            required
-            type="radio"
-            id="goalLevel4"
-            name="goalLevel"
-            value="Stretch"
-            checked={formData.goalLevel === "Stretch"}
-            onChange={handleChange}
-          />
-          <label htmlFor="goalLevel4">Stretch</label>
-        </fieldset>
 
-        <label htmlFor="goal-reason">
-          Why do you want to achieve this goal?{" "}
-          <span className="small-text">(Required)</span>
-        </label>
-        <input
-          required
-          className="form-input"
-          type="text"
-          name="goalReason"
-          id="goal-reason"
-          value={formData.goalReason}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="goal-reward">
-          What will you reward yourself with?{" "}
-          <span className="small-text">(Required)</span>
-        </label>
-        <input
-          required
-          className="form-input"
-          type="text"
-          name="goalReward"
-          id="goal-reward"
-          value={formData.goalReward}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="deadline">
-          When do you want to achieve this goal by?{" "}
-          <span className="small-text">(In the format dd/mm/yyyy)</span>
-        </label>
-        <input
-          className="form-input"
-          type="date"
-          name="goalDeadline"
-          id="deadline"
-          min={`${year}-${month}-${day}`}
-          max="2040-12-31"
-          value={formData.goalDeadline}
-          onChange={handleChange}
-        />
-
-        <div className="goal-footer">
-          <input
-            className="create-goal-btn"
-            type="submit"
-            value="Create your goal"
-          />
-          <button
-            type="button"
-            ref={lastButtonRef}
-            className="close-goal-btn"
-            onClick={() => closeGoalForm()}
-          >
-            Close goal form
-          </button>
+          <div className="goal-footer">
+            <input
+              className="create-goal-btn"
+              type="submit"
+              value="Create your goal"
+            />
+            <button
+              type="button"
+              ref={lastButtonRef}
+              className="close-goal-btn"
+              onClick={() => closeGoalForm()}
+            >
+              Close goal form
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }

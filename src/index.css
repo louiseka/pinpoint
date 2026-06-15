@@ -93,15 +93,3 @@ main {
     padding: 0 0.5em 0.5em;
   }
 }
-
-/* CSS Grid
-.wrapper {
-  max-width: 100%;
-  margin: 3.125em auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  grid-auto-rows: minmax(100px, auto);
-  padding: 2em 1.5em;
-  border-radius: 5px;
-} */

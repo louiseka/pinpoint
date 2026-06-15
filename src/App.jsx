@@ -140,39 +140,43 @@ function App() {
           />
         </aside>
 
-        <section className="wrapper">
-          {showGoalForm && (
-            <GoalForm saveGoal={saveGoal} closeGoalForm={closeGoalForm} />
-          )}
-          {filteredGoals.length === 0 && goals.length > 0 ? (
-            <p className="notice-text">No goals found for this filter.</p>
-          ) : (
-            filteredGoals
-              .filter((goal) => !goal.complete)
-              .map((goal) => (
-                <SavedGoal
-                  goalData={goal}
-                  deleteGoal={deleteGoal}
-                  completeGoal={completeGoal}
-                  goalId={goal.id}
-                  key={goal.id}
-                  saveToDoItem={saveToDoItem}
-                  completeToDoItem={completeToDoItem}
-                  deleteToDoItem={deleteToDoItem}
-                />
-              ))
-          )}
-          {goalComplete && (
-            <Confetti
-              width={width}
-              height={height}
-              recycle={false}
-              tweenDuration={5000}
-              onConfettiComplete={() => {
-                setGoalComplete(false);
-              }}
-            />
-          )}
+        <section>
+          <h2 className="secondary-header">My Goals</h2>
+
+          <div className="wrapper">
+            {showGoalForm && (
+              <GoalForm saveGoal={saveGoal} closeGoalForm={closeGoalForm} />
+            )}
+            {filteredGoals.length === 0 && goals.length > 0 ? (
+              <p className="notice-text">No goals found for this filter.</p>
+            ) : (
+              filteredGoals
+                .filter((goal) => !goal.complete)
+                .map((goal) => (
+                  <SavedGoal
+                    goalData={goal}
+                    deleteGoal={deleteGoal}
+                    completeGoal={completeGoal}
+                    goalId={goal.id}
+                    key={goal.id}
+                    saveToDoItem={saveToDoItem}
+                    completeToDoItem={completeToDoItem}
+                    deleteToDoItem={deleteToDoItem}
+                  />
+                ))
+            )}
+            {goalComplete && (
+              <Confetti
+                width={width}
+                height={height}
+                recycle={false}
+                tweenDuration={5000}
+                onConfettiComplete={() => {
+                  setGoalComplete(false);
+                }}
+              />
+            )}
+          </div>
         </section>
 
         {goals.filter((goal) => goal.complete).length > 0 && (
